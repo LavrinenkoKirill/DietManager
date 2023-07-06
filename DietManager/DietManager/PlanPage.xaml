@@ -72,7 +72,7 @@
                     </Button.Background>
                 </Button>
 
-                <Button x:Name ="ReportButton" HeightRequest="60" WidthRequest="195" Text="Общий отчет" BackgroundColor="White" TextColor="Black" Margin="0,100,0,0">
+                <Button x:Name ="ReportButton" HeightRequest="60" WidthRequest="195" Text="Общий отчет" BackgroundColor="White" TextColor="Black" Margin="0,100,0,0" Clicked="ReportClick">
                     <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
                 </Button>
             </StackLayout>

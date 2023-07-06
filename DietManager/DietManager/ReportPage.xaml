@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietManager.ReportPage">
+    <ContentPage.Content>
+        
+        <StackLayout x:Name="ReportBG">
+          
+            <StackLayout Spacing="20" Margin="0,0,0,30">
+                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                    <StackLayout>
+                        <Label Text="Завершенные дни" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="50" CornerRadius ="20" Margin="60,0,60,0">
+                    <StackLayout>
+                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+
+
+            <StackLayout Spacing="20" Margin="0,0,0,30">
+                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                    <StackLayout>
+                        <Label Text="Дней осталось" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="60" Margin="60,0,60,0" CornerRadius ="20">
+                    <StackLayout>
+                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+
+
+            <StackLayout Spacing="20" Margin="0,0,0,30">
+                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                    <StackLayout>
+                        <Label Text="Соженно" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="60" Margin="60,0,60,0" CornerRadius ="20">
+                    <StackLayout>
+                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Spacing="20" Margin="0,0,0,30">
+                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                    <StackLayout>
+                        <Label Text="Текущий вес" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="60" Margin="60,0,60,0" CornerRadius ="20">
+                    <StackLayout>
+                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation ="Horizontal" Spacing="0">
+                <Button x:Name ="RButton" HeightRequest="60" WidthRequest="195" Text="План на сегодня" BackgroundColor="White" TextColor="Black" Margin="0,0,0,0" Clicked="PClick">
+                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                </Button>
+                
+                <Button x:Name ="PButton" HeightRequest="60" WidthRequest="195" Text="Общий отчет" TextColor="White" Margin="0,0,0,0">
+                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                
+            </StackLayout>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,24 +10,24 @@ using Xamarin.Forms.Xaml;
 
 namespace DietManager
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PlanPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ReportPage : ContentPage
+    {
         private string gender;
         private int height;
         private int currentWeight;
         private int wishWeight;
         private int term;
-        public PlanPage (string gender,int height, int currentWeight, int wishWeight, int term)
-		{
+
+        public ReportPage(string gender, int height, int currentWeight, int wishWeight, int term)
+        {
             this.gender = gender;
             this.height = height;
             this.currentWeight = currentWeight;
             this.wishWeight = wishWeight;
             this.term = term;
-            InitializeComponent ();
-		}
-
+            InitializeComponent();
+        }
 
         protected override void OnAppearing()
         {
@@ -44,20 +44,8 @@ namespace DietManager
                 SecondColor.Offset = (float)1.0;
                 br.GradientStops.Add(FirstColor);
                 br.GradientStops.Add(SecondColor);
-                PlanBG.Background = br;
+                ReportBG.Background = br;
 
-                LinearGradientBrush ButtonBrush = new LinearGradientBrush();
-                ButtonBrush.StartPoint = new Point(1, 0);
-                ButtonBrush.EndPoint = new Point(0, 1);
-                GradientStop FirstButtonColor = new GradientStop();
-                GradientStop SecondButtonColor = new GradientStop();
-                FirstButtonColor.Color = Color.FromHex("AB74EBD5");
-                SecondButtonColor.Color = Color.FromHex("AB9FACE6");
-                FirstButtonColor.Offset = (float)0.1;
-                SecondButtonColor.Offset = (float)1.0;
-                ButtonBrush.GradientStops.Add(FirstButtonColor);
-                ButtonBrush.GradientStops.Add(SecondButtonColor);
-                HistoryButton.Background = ButtonBrush;
 
                 LinearGradientBrush PlanButtonBrush = new LinearGradientBrush();
                 PlanButtonBrush.StartPoint = new Point(1, 0);
@@ -70,8 +58,7 @@ namespace DietManager
                 SecondPlanButtonColor.Offset = (float)1.0;
                 PlanButtonBrush.GradientStops.Add(FirstPlanButtonColor);
                 PlanButtonBrush.GradientStops.Add(SecondPlanButtonColor);
-                PlanButton.Background = PlanButtonBrush;
-
+                PButton.Background = PlanButtonBrush;
 
 
             }
@@ -88,7 +75,7 @@ namespace DietManager
                 SecondColor.Offset = (float)1.0;
                 br.GradientStops.Add(FirstColor);
                 br.GradientStops.Add(SecondColor);
-                PlanBG.Background = br;
+                ReportBG.Background = br;
 
 
             }
@@ -96,9 +83,9 @@ namespace DietManager
 
         }
 
-        protected async void ReportClick(object sender, EventArgs e)
+        protected async void PClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ReportPage(gender, height, currentWeight, wishWeight, term));
+            await Navigation.PushAsync(new PlanPage(gender, height, currentWeight, wishWeight, term));
         }
 
 
