@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BcqBPICfo7SvV+9EIGqZbPAWTGD4CwSaFMbUXmfN5sSDfHCApS+OCtxqCe2oN7wbtbAeszAjfCKBpq9raILD8Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kirill\\source\\repos\\DietManager\\DietManager\\DietManager.iOS\\DietManager.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kirill\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

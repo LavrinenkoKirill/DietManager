@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietManager.HeightPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="BG">
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34">
+                <StackLayout>
+                    <Label Text="Укажите ваш рост" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+            </Frame>
+
+            <Image x:Name="HeightImage" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
+
+            <StackLayout Orientation ="Horizontal" >
+                <Entry x:Name ="HeightEntry" Placeholder="Укажите ваш рост" FontSize="15" BackgroundColor="White" HeightRequest ="10" WidthRequest="180" Margin="70,0,5,0"/>
+
+                <Frame BackgroundColor="White" HeightRequest="40" WidthRequest="30" Margin="0,0,5,0">
+                    <StackLayout>
+                        <Label Text="см" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    </StackLayout>
+
+                </Frame>
+
+            </StackLayout>
+
+            <StackLayout Orientation ="Horizontal">
+                <Button x:Name ="Back" HeightRequest="53" WidthRequest="74" CornerRadius="180" Margin="10,220,220,10">
+                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
+                <Button x:Name ="Forward" HeightRequest="53" WidthRequest="74" CornerRadius="180" Margin="0,220,10,10" Clicked="HeightClick">
+                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

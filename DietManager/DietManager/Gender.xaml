@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietManager.Gender">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightCoral" >
+            <StackLayout.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint= "0,1">
+                    <GradientStop Color = "#CCF68084"
+                          Offset="0.1" />
+                    <GradientStop Color="#55FFDF"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34">
+                <StackLayout>
+                    <Label Text="Выберите ваш пол" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+            </Frame>
+
+
+            <StackLayout Orientation ="Horizontal">
+                <Image x:Name="Male" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
+                <Image x:Name="Female" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation ="Horizontal">
+                <RadioButton x:Name ="MaleButton" Content = "Мужчина" TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="40" WidthRequest="150" Margin="20,0,20,30" GroupName="state">
+                    <RadioButton.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#ABF9D423"
+                            Offset= "0.1" />
+                            <GradientStop Color=  "#E14FAD"
+                             Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </RadioButton.Background>
+                </RadioButton>
+
+                <RadioButton x:Name ="FemaleButton" Content = "Женщина" TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="40" WidthRequest="150" Margin="25,0,0,30" GroupName="state">
+                    <RadioButton.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#ABF9D423"
+                            Offset= "0.1" />
+                            <GradientStop Color=  "#E14FAD"
+                            Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </RadioButton.Background>
+                </RadioButton>
+
+            </StackLayout>
+
+
+            <StackLayout Orientation ="Horizontal">
+                <Button HeightRequest="53" WidthRequest="74" CornerRadius="180" Margin="10,200,220,10">
+                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
+                <Button HeightRequest="53" WidthRequest="74" CornerRadius="180" Margin="0,200,10,10" Clicked="GenderClick">
+                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackLayout>
+
+
+        </StackLayout>
+
+        
+        
+        
+    </ContentPage.Content>
+</ContentPage>

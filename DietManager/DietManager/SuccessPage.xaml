@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietManager.SuccessPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="SuccessBG">
+            
+            <Image x:Name="SuccessImage" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
+
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34">
+                <StackLayout>
+                    <Label Text="Отлично,программа была построена успешно. Мы готовы начинать!" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+
+            <Button x:Name ="StartProgramButton" HeightRequest="75" WidthRequest="260" CornerRadius="20" Margin="50,90,50,130" Text = "Начать программу" TextColor="White"  FontSize = "17" Clicked="StartProgramClick">
+                <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                        <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

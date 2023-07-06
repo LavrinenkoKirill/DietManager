@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietManager.MainPage">
+
+
+    <!-- 
+    <AbsoluteLayout BackgroundColor="LightCoral">
+        <AbsoluteLayout.Background>
+            <LinearGradientBrush>
+                <GradientStop Color = "#CCF68084"
+                          Offset="0.1" />
+                <GradientStop Color="#CC55FFDF"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </AbsoluteLayout.Background>
+
+        <Frame BackgroundColor="#AC62E6" CornerRadius="20" AbsoluteLayout.LayoutBounds="85,150,228,125">
+            <AbsoluteLayout>
+                <Label Text="Diet Manager — ваш персональный карманный диетолог" TextColor="White" FontSize = "17"  />
+            </AbsoluteLayout>
+        </Frame>
+        <Button Text = "Начать новую программу" TextColor="White" AbsoluteLayout.LayoutBounds="85,510,236,49" CornerRadius="20" />
+        <Button Text = "Продолжить программу"   TextColor="White" AbsoluteLayout.LayoutBounds="85,595,236,49" CornerRadius="20" />
+
+    </AbsoluteLayout>
+     -->
+
+    <StackLayout BackgroundColor="LightCoral" Orientation="Vertical">
+        <StackLayout.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint= "0,1">
+                <GradientStop Color = "#CCF68084"
+                          Offset="0.1" />
+                <GradientStop Color="#55FFDF"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </StackLayout.Background>
+
+
+        <Image x:Name="Logo" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
+
+
+
+        <Frame BackgroundColor="#ABAC62E6" CornerRadius="20"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="60,0,60,0">
+            <StackLayout>
+                <Label Text="Diet Manager — ваш персональный карманный диетолог" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+            
+        </Frame>
+
+        <Button Text = "Начать новую программу" TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="50" WidthRequest="236" Margin ="60,150,60,10" Clicked="ButtonClick">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                    <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button Text = "Продолжить программу"   TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="49" WidthRequest="236" Margin= "60,0,60,30" Clicked="ContinueProgramClick">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                    <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+    </StackLayout>
+
+
+
+</ContentPage>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietManager.PlanPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="PlanBG">
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin ="15,20,15,50" HeightRequest="40" WidthRequest="295">
+                <StackLayout>
+                    <Label Text="День N" TextColor="White" FontSize = "32" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+            
+            
+            <StackLayout Spacing="20" Margin="0,0,0,40">
+                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                    <StackLayout>
+                        <Label Text="Ежедневная норма калорий" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="50" CornerRadius ="20" Margin="60,0,60,0">
+                    <StackLayout>
+                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+
+
+            <StackLayout Spacing="20" Margin="0,0,0,50">
+                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                    <StackLayout>
+                        <Label Text="Количество калорий сегодня" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="60" Margin="60,0,60,0" CornerRadius ="20">
+                    <StackLayout>
+                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+
+            
+
+            <Button x:Name ="HistoryButton" HeightRequest="50" WidthRequest="260" CornerRadius="20" Margin="100,0,100,0" Text = "История питания" TextColor="White"  FontSize = "17">
+                <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                        <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+
+            
+            <StackLayout Orientation ="Horizontal" Spacing="0">
+                <Button x:Name ="PlanButton" HeightRequest="60" WidthRequest="195" Text="План на сегодня" TextColor="White" Margin="0,100,0,0">
+                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
+                <Button x:Name ="ReportButton" HeightRequest="60" WidthRequest="195" Text="Общий отчет" BackgroundColor="White" TextColor="Black" Margin="0,100,0,0">
+                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                </Button>
+            </StackLayout>
+
+            
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>
