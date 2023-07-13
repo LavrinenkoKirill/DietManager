@@ -23,7 +23,7 @@ namespace DietManager {
         private global::Xamarin.Forms.Image HeightImage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry HeightEntry;
+        private global::DietManager.CustomEntry HeightEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button Back;
@@ -36,7 +36,7 @@ namespace DietManager {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(HeightPage));
             BG = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "BG");
             HeightImage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "HeightImage");
-            HeightEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "HeightEntry");
+            HeightEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::DietManager.CustomEntry>(this, "HeightEntry");
             Back = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "Back");
             Forward = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "Forward");
         }

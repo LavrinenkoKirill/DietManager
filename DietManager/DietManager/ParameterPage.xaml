@@ -1,34 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DietManager.ParameterPage">
+             x:Class="DietManager.ParameterPage"
+             xmlns:custom="clr-namespace:DietManager"
+             NavigationPage.HasNavigationBar="False">
+
     <ContentPage.Content>
         <StackLayout x:Name="HeightBG">
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin ="15,20,15,0" HeightRequest="90">
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin ="15,34,15,34" HeightRequest="30" WidthRequest="10">
                 <StackLayout>
                     <Label Text="Укажите ваши параметры" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
             </Frame>
 
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34">
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34,0,34,20">
                 <StackLayout>
                     <Label Text="Сколько вы весите сейчас?" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
             </Frame>
 
 
-            <StackLayout Orientation ="Horizontal" >
-                <Entry x:Name ="WeightEntry" Placeholder="Укажите ваш вес" FontSize="15" BackgroundColor="White" HeightRequest ="10" WidthRequest="180" Margin="70,0,5,0"/>
+            <StackLayout Orientation ="Horizontal">
+                <custom:CustomEntry x:Name="WeightEntry"
+                                CornerRadius="20"
+                                HorizontalTextAlignment="Center"
+                                FontSize="14"
+                                TextColor="Black"
+                                WidthRequest="180"
+                                HeightRequest="10"
+                                Margin="60,0,5,0"
+                                Placeholder="Укажите текущий вес"
+                                PlaceholderColor="Gray"
+                                Keyboard="Numeric"/>
 
-                <Frame BackgroundColor="White" HeightRequest="40" WidthRequest="50" Margin="0,0,5,0">
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="50" Margin="0,0,5,0" CornerRadius="20">
                     <StackLayout>
-                        <Label Text="кг" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                        <Label Text="кг" TextColor="Black" FontSize = "14" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="0,0,0,5"/>
                     </StackLayout>
 
                 </Frame>
             </StackLayout>
 
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34">
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34,34,34,20">
                 <StackLayout>
                     <Label Text="Сколько вы хотите весить?" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
@@ -36,35 +49,55 @@
 
 
             <StackLayout Orientation ="Horizontal" >
-                <Entry x:Name ="NeedEntry" Placeholder="Укажите желаемый вес" FontSize="15" BackgroundColor="White" HeightRequest ="10" WidthRequest="180" Margin="70,0,5,0"/>
+                <custom:CustomEntry x:Name="NeedEntry"
+                                CornerRadius="20"
+                                HorizontalTextAlignment="Center"
+                                FontSize="14"
+                                TextColor="Black"
+                                WidthRequest="180"
+                                HeightRequest="10"
+                                Margin="60,0,5,0"
+                                Placeholder="Укажите желаемый вес"
+                                PlaceholderColor="Gray"
+                                Keyboard="Numeric"/>
 
-                <Frame BackgroundColor="White" HeightRequest="40" WidthRequest="60" Margin="0,0,5,0">
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="50" Margin="0,0,5,0" CornerRadius="20">
                     <StackLayout>
-                        <Label Text="кг" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                        <Label Text="кг" TextColor="Black" FontSize = "14" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="0,0,0,5"/>
                     </StackLayout>
 
                 </Frame>
             </StackLayout>
 
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34">
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34,34,34,20">
                 <StackLayout>
-                    <Label Text="Длительность программы" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    <Label Text="Укажите ваш возраст" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
             </Frame>
 
-            <StackLayout Orientation ="Horizontal" >
-                <Entry x:Name ="TermEntry" Placeholder="Укажите длительность" FontSize="15" BackgroundColor="White" HeightRequest ="10" WidthRequest="180" Margin="70,0,5,0"/>
+            <StackLayout Orientation ="Horizontal" Margin="0,0,0,60">
+                <custom:CustomEntry x:Name="TermEntry"
+                                CornerRadius="20"
+                                HorizontalTextAlignment="Center"
+                                FontSize="14"
+                                TextColor="Black"
+                                WidthRequest="180"
+                                HeightRequest="10"
+                                Margin="60,0,5,0"
+                                Placeholder="Укажите возраст"
+                                PlaceholderColor="Gray"
+                                Keyboard="Numeric"/>
 
-                <Frame BackgroundColor="White" HeightRequest="40" WidthRequest="60" Margin="0,0,0,0">
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="50" Margin="0,0,0,0" CornerRadius="20">
                     <StackLayout>
-                        <Label Text="недель" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" />
+                        <Label Text="лет" TextColor="Black" FontSize = "14" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding="0,0,0,5"/>
                     </StackLayout>
 
                 </Frame>
             </StackLayout>
 
             <StackLayout Orientation ="Horizontal">
-                <Button x:Name ="ParameterBack" HeightRequest="53" WidthRequest="74" CornerRadius="180" Margin="10,10,220,10">
+                <Button x:Name ="ParameterBack" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="10,10,240,10" Clicked="ParameterBackClick">
                     <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
                     <Button.Background>
                         <LinearGradientBrush>
@@ -76,7 +109,7 @@
                     </Button.Background>
                 </Button>
 
-                <Button x:Name ="ParameterForward" HeightRequest="53" WidthRequest="74" CornerRadius="180" Margin="0,10,220,10" Clicked="ParameterClick">
+                <Button x:Name ="ParameterForward" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="0,10,220,10" Clicked="ParameterClick">
                     <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
                     <Button.Background>
                         <LinearGradientBrush>

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DietManager
@@ -17,7 +12,7 @@ namespace DietManager
 
         protected override void OnAppearing()
         {
-            Logo.Source = ImageSource.FromResource("DietManager.logo1.png");
+            Logo.Source = ImageSource.FromResource("DietManager.logo2.png");
         }
 
 
@@ -28,7 +23,7 @@ namespace DietManager
 
         protected async void ContinueProgramClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PlanPage("Female",170,80,75,8));
+            await Navigation.PushAsync(new PlanPage());
         }
     }
 }

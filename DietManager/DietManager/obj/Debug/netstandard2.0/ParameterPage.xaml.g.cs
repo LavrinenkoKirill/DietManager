@@ -20,13 +20,13 @@ namespace DietManager {
         private global::Xamarin.Forms.StackLayout HeightBG;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry WeightEntry;
+        private global::DietManager.CustomEntry WeightEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry NeedEntry;
+        private global::DietManager.CustomEntry NeedEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry TermEntry;
+        private global::DietManager.CustomEntry TermEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button ParameterBack;
@@ -38,9 +38,9 @@ namespace DietManager {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ParameterPage));
             HeightBG = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "HeightBG");
-            WeightEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "WeightEntry");
-            NeedEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "NeedEntry");
-            TermEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "TermEntry");
+            WeightEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::DietManager.CustomEntry>(this, "WeightEntry");
+            NeedEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::DietManager.CustomEntry>(this, "NeedEntry");
+            TermEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::DietManager.CustomEntry>(this, "TermEntry");
             ParameterBack = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "ParameterBack");
             ParameterForward = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "ParameterForward");
         }

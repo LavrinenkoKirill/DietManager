@@ -1,30 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DietManager.MainPage">
+             x:Class="DietManager.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
-
-    <!-- 
-    <AbsoluteLayout BackgroundColor="LightCoral">
-        <AbsoluteLayout.Background>
-            <LinearGradientBrush>
-                <GradientStop Color = "#CCF68084"
-                          Offset="0.1" />
-                <GradientStop Color="#CC55FFDF"
-                          Offset="1.0" />
-            </LinearGradientBrush>
-        </AbsoluteLayout.Background>
-
-        <Frame BackgroundColor="#AC62E6" CornerRadius="20" AbsoluteLayout.LayoutBounds="85,150,228,125">
-            <AbsoluteLayout>
-                <Label Text="Diet Manager — ваш персональный карманный диетолог" TextColor="White" FontSize = "17"  />
-            </AbsoluteLayout>
-        </Frame>
-        <Button Text = "Начать новую программу" TextColor="White" AbsoluteLayout.LayoutBounds="85,510,236,49" CornerRadius="20" />
-        <Button Text = "Продолжить программу"   TextColor="White" AbsoluteLayout.LayoutBounds="85,595,236,49" CornerRadius="20" />
-
-    </AbsoluteLayout>
-     -->
 
     <StackLayout BackgroundColor="LightCoral" Orientation="Vertical">
         <StackLayout.Background>

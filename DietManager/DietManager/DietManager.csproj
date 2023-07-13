@@ -12,20 +12,42 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="female.png" />
-    <None Remove="height.png" />
+    <None Remove="bread.png" />
+    <None Remove="drink.png" />
+    <None Remove="female1.png" />
+    <None Remove="fish.png" />
+    <None Remove="fruit.png" />
+    <None Remove="home.png" />
     <None Remove="logo.png" />
-    <None Remove="logo1.png" />
-    <None Remove="male.png" />
-    <None Remove="success.png" />
+    <None Remove="logo2.png" />
+    <None Remove="male1.png" />
+    <None Remove="meat.png" />
+    <None Remove="plus.png" />
+    <None Remove="ps.png" />
+    <None Remove="smb.png" />
+    <None Remove="smf.png" />
+    <None Remove="smilk.png" />
+    <None Remove="veg.png" />
+    <None Remove="wheight.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="female.png" />
-    <EmbeddedResource Include="height.png" />
-    <EmbeddedResource Include="logo1.png" />
-    <EmbeddedResource Include="male.png" />
-    <EmbeddedResource Include="success.png" />
+    <EmbeddedResource Include="bread.png" />
+    <EmbeddedResource Include="drink.png" />
+    <EmbeddedResource Include="female1.png" />
+    <EmbeddedResource Include="fish.png" />
+    <EmbeddedResource Include="fruit.png" />
+    <EmbeddedResource Include="home.png" />
+    <EmbeddedResource Include="logo2.png" />
+    <EmbeddedResource Include="male1.png" />
+    <EmbeddedResource Include="meat.png" />
+    <EmbeddedResource Include="plus.png" />
+    <EmbeddedResource Include="ps.png" />
+    <EmbeddedResource Include="smb.png" />
+    <EmbeddedResource Include="smf.png" />
+    <EmbeddedResource Include="smilk.png" />
+    <EmbeddedResource Include="veg.png" />
+    <EmbeddedResource Include="wheight.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,10 +56,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="CategoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ChooseProductPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Gender.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="HeightPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HistoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ParameterPage.xaml">

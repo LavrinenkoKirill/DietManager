@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DietManager.Gender">
+             x:Class="DietManager.Gender"
+             NavigationPage.HasNavigationBar="False">
+    
     <ContentPage.Content>
         <StackLayout BackgroundColor="LightCoral" >
             <StackLayout.Background>
@@ -21,11 +23,12 @@
             </Frame>
 
 
-            <StackLayout Orientation ="Horizontal">
+            <StackLayout Orientation ="Horizontal" Margin="0,80,0,0">
                 <Image x:Name="Male" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
                 <Image x:Name="Female" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
             </StackLayout>
 
+            
             <StackLayout Orientation ="Horizontal">
                 <RadioButton x:Name ="MaleButton" Content = "Мужчина" TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="40" WidthRequest="150" Margin="20,0,20,30" GroupName="state">
                     <RadioButton.Background>
@@ -53,8 +56,7 @@
 
 
             <StackLayout Orientation ="Horizontal">
-                <Button HeightRequest="53" WidthRequest="74" CornerRadius="180" Margin="10,200,220,10">
-                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                <Button x:Name="GenderBack" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="10,200,240,10" Clicked="GenderBackClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -65,8 +67,7 @@
                     </Button.Background>
                 </Button>
 
-                <Button HeightRequest="53" WidthRequest="74" CornerRadius="180" Margin="0,200,10,10" Clicked="GenderClick">
-                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                <Button x:Name ="GenderForward" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="0,200,10,10" Clicked="GenderClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"

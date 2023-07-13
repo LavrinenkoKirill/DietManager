@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DietManager.ReportPage">
+             x:Class="DietManager.ReportPage"
+             NavigationPage.HasNavigationBar="False">
+    
     <ContentPage.Content>
         
         <StackLayout x:Name="ReportBG">
           
-            <StackLayout Spacing="20" Margin="0,0,0,30">
+            <StackLayout Spacing="20" Margin="0,20,0,30">
                 <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
                     <StackLayout>
                         <Label Text="Завершенные дни" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
@@ -15,7 +17,7 @@
 
                 <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="50" CornerRadius ="20" Margin="60,0,60,0">
                     <StackLayout>
-                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                        <Label x:Name="completedDaysLabel" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
                     </StackLayout>
 
                 </Frame>
@@ -32,9 +34,8 @@
 
                 <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="60" Margin="60,0,60,0" CornerRadius ="20">
                     <StackLayout>
-                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                        <Label x:Name ="remainingDaysLabel" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
                     </StackLayout>
-
                 </Frame>
             </StackLayout>
 
@@ -42,14 +43,14 @@
             <StackLayout Spacing="20" Margin="0,0,0,30">
                 <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
                     <StackLayout>
-                        <Label Text="Соженно" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                        <Label x:Name="burnOrGetLabel" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </Frame>
 
 
                 <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="60" Margin="60,0,60,0" CornerRadius ="20">
                     <StackLayout>
-                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                        <Label x:Name ="burnLabel" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
                     </StackLayout>
 
                 </Frame>
@@ -63,9 +64,9 @@
                 </Frame>
 
 
-                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="60" Margin="60,0,60,0" CornerRadius ="20">
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="60" Margin="60,0,60,25" CornerRadius ="20">
                     <StackLayout>
-                        <Label Text="N" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                        <Label x:Name="weightLabel" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
                     </StackLayout>
 
                 </Frame>

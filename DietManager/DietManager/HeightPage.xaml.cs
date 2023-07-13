@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace DietManager
@@ -55,7 +47,7 @@ namespace DietManager
                 Back.Background = ButtonBrush;
                 Forward.Background = ButtonBrush;
             }
-            else 
+            else
             {
                 LinearGradientBrush br = new LinearGradientBrush();
                 br.StartPoint = new Point(1, 0);
@@ -73,22 +65,24 @@ namespace DietManager
 
             }
 
-            HeightImage.Source = ImageSource.FromResource("DietManager.height.png");
+            HeightImage.Source = ImageSource.FromResource("DietManager.wheight.png");
+            Back.ImageSource = ImageSource.FromResource("DietManager.smb.png");
+            Forward.ImageSource = ImageSource.FromResource("DietManager.smf.png");
 
         }
 
 
         protected async void HeightClick(object sender, EventArgs e)
         {
-            
+
             if (string.IsNullOrEmpty(HeightEntry.Text))
             {
                 await DisplayAlert("Значение роста", "Пожалуйста, укажите значение от 100 до 250 см", "ОК");
                 return;
             }
-            else 
-            { 
-               int height = int.Parse(HeightEntry.Text);
+            else
+            {
+                int height = int.Parse(HeightEntry.Text);
                 if (height < 100 || height > 250)
                 {
                     await DisplayAlert("Значение роста", "Пожалуйста, укажите значение от 100 до 250 см", "ОК");
@@ -96,9 +90,15 @@ namespace DietManager
                 }
                 else
                 {
-                    await Navigation.PushAsync(new ParameterPage(gender,height));
+                    await Navigation.PushAsync(new ParameterPage(gender, height));
                 }
             }
+        }
+
+        protected async void HeightBackClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Gender());
+
         }
 
     }

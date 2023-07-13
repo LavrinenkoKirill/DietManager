@@ -19,3 +19,6 @@ C:\Users\Kirill\source\repos\DietManager\DietManager\DietManager\obj\Debug\netst
 C:\Users\Kirill\source\repos\DietManager\DietManager\DietManager\obj\Debug\netstandard2.0\SuccessPage.xaml.g.cs
 C:\Users\Kirill\source\repos\DietManager\DietManager\DietManager\obj\Debug\netstandard2.0\PlanPage.xaml.g.cs
 C:\Users\Kirill\source\repos\DietManager\DietManager\DietManager\obj\Debug\netstandard2.0\ReportPage.xaml.g.cs
+C:\Users\Kirill\source\repos\DietManager\DietManager\DietManager\obj\Debug\netstandard2.0\HistoryPage.xaml.g.cs
+C:\Users\Kirill\source\repos\DietManager\DietManager\DietManager\obj\Debug\netstandard2.0\CategoryPage.xaml.g.cs
+C:\Users\Kirill\source\repos\DietManager\DietManager\DietManager\obj\Debug\netstandard2.0\ChooseProductPage.xaml.g.cs

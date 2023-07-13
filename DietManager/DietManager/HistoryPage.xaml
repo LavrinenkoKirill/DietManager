@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietManager.HistoryPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Content>
+        <ScrollView>
+          <StackLayout x:Name="HistoryBG">
+            <StackLayout Spacing="20" Margin="0,20,0,30">
+                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                    <StackLayout>
+                        <Label Text="Оставшиеся калории" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="50" CornerRadius ="20" Margin="60,0,60,0">
+                    <StackLayout>
+                        <Label x:Name="caloriesRemainsLabel" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+
+                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                    <StackLayout>
+                        <Label Text="История питания" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Button x:Name ="AddButton" HeightRequest="60" WidthRequest="50" Text="Добавить" TextColor="White" Margin="100,50,100,0" CornerRadius="20" Clicked="AddButtonClick">
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

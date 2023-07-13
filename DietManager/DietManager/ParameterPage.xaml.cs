@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -71,6 +67,8 @@ namespace DietManager
 
             }
 
+            ParameterBack.ImageSource = ImageSource.FromResource("DietManager.smb.png");
+            ParameterForward.ImageSource = ImageSource.FromResource("DietManager.smf.png");
 
         }
 
@@ -103,7 +101,7 @@ namespace DietManager
                     await DisplayAlert("Значение текущего веса", "Пожалуйста, укажите значение от 41 до 150 кг", "ОК");
                     return;
                 }
-                else 
+                else
                 {
                     int wishWeight = int.Parse(NeedEntry.Text);
                     if (wishWeight < 41 || wishWeight > 149)
@@ -114,20 +112,26 @@ namespace DietManager
 
                     else
                     {
-                        int term = int.Parse(TermEntry.Text);
-                        if (term < 2)
+                        int age = int.Parse(TermEntry.Text);
+                        if (age < 10 || age > 100)
                         {
-                            await DisplayAlert("Значение желаемого веса", "Пожалуйста, укажите значение от 40 до 149 кг", "ОК");
+                            await DisplayAlert("Значение желаемого веса", "Пожалуйста, укажите значение от 10 до 100 лет", "ОК");
                             return;
                         }
 
                         else
                         {
-                            await Navigation.PushAsync(new SuccessPage(gender, height, currentWeight, wishWeight, term));
+                            await Navigation.PushAsync(new SuccessPage(gender, height, currentWeight, wishWeight, age));
                         }
                     }
                 }
             }
+        }
+
+        protected async void ParameterBackClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HeightPage(gender));
+
         }
     }
 }

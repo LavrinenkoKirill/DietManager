@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,18 +9,38 @@ namespace DietManager
     public partial class ReportPage : ContentPage
     {
         private string gender;
-        private int height;
         private int currentWeight;
         private int wishWeight;
-        private int term;
+        private int day;
+        private double dailyRate;
+        private double dailyBurn;
 
-        public ReportPage(string gender, int height, int currentWeight, int wishWeight, int term)
+
+        public ReportPage(string gender, int currentWeight, int wishWeight, int day, double dailyRate)
         {
             this.gender = gender;
-            this.height = height;
             this.currentWeight = currentWeight;
             this.wishWeight = wishWeight;
-            this.term = term;
+            this.day = day;
+            this.dailyRate = dailyRate;
+            double normalRate;
+            if (currentWeight > wishWeight)
+            {
+                normalRate = dailyRate * 1.2;
+                dailyBurn = (normalRate - dailyRate) / 6.15;
+                dailyBurn /= 1000;
+
+            }
+            else if (currentWeight < wishWeight)
+            {
+                normalRate = dailyRate * 0.8;
+                dailyBurn = (dailyRate - normalRate) / 6.15;
+                dailyBurn /= 1000;
+            }
+            else
+            {
+                dailyBurn = 0;
+            }
             InitializeComponent();
         }
 
@@ -79,13 +94,24 @@ namespace DietManager
 
 
             }
+            completedDaysLabel.Text = (day - 1).ToString();
 
+            if (currentWeight > wishWeight) remainingDaysLabel.Text = ((int)((currentWeight - wishWeight) / dailyBurn - day)).ToString();
+            else remainingDaysLabel.Text = ((int)((wishWeight - currentWeight) / dailyBurn - day)).ToString();
+
+            if (currentWeight < wishWeight) burnOrGetLabel.Text = "Набрано";
+            else burnOrGetLabel.Text = "Соженно";
+
+            burnLabel.Text = (dailyBurn * (day - 1)).ToString();
+
+            if (currentWeight > wishWeight) weightLabel.Text = (currentWeight - (day - 1) * dailyBurn).ToString();
+            else (currentWeight + (day - 1) * dailyBurn).ToString();
 
         }
 
         protected async void PClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PlanPage(gender, height, currentWeight, wishWeight, term));
+            await Navigation.PushAsync(new PlanPage());
         }
 
 

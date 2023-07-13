@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DietManager.ChooseProductPage"
+             xmlns:custom="clr-namespace:DietManager"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Content>
+        <StackLayout x:Name="ChooseProductBG" Spacing="20">
+            <custom:CustomEntry x:Name="ProductEntry"
+                                CornerRadius="20"
+                                IsCurvedCornersEnabled="True"    
+                                HorizontalTextAlignment="Center"
+                                FontSize="15"
+                                TextColor="Black"
+                                WidthRequest="180"
+                                HeightRequest="50"
+                                Margin="10,10,10,0"
+                                Placeholder="Поиск продукта"
+                                PlaceholderColor="Gray"
+                                Keyboard="Text"/>
+
+            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                <StackLayout>
+                    <Label x:Name="CategoryNameLabel" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+
+            <!--
+            <StackLayout Orientation ="Horizontal" VerticalOptions="End">
+                <Button x:Name ="Back" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="10,270,85,20" Clicked="BackClick">
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
+
+                <Button x:Name ="Home" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="0,270,10,20" Clicked="HomeClick">
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color = "#FF9A9E"
+                          Offset= "0.1" />
+                            <GradientStop Color=  "#FFB5E7"
+                          Offset= "1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackLayout>
+            -->
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
