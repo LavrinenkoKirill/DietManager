@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout x:Name="PlanBG">
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin ="15,20,15,50" HeightRequest="40" WidthRequest="295">
+            <Frame x:Name ="Frame1" BackgroundColor="#44e6628f" CornerRadius="20" Margin ="15,20,15,50" HeightRequest="40" WidthRequest="295">
                 <StackLayout>
                     <Label x:Name="DayLabel" TextColor="White" FontSize = "32" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
@@ -13,7 +13,7 @@
             
             
             <StackLayout Spacing="20" Margin="0,0,0,40">
-                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                <Frame x:Name ="Frame2" BackgroundColor="#44e6628f" CornerRadius="20" Margin="35,0,35,0">
                     <StackLayout>
                         <Label Text="Ежедневная норма калорий" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
@@ -29,7 +29,7 @@
 
 
             <StackLayout Spacing="20" Margin="0,40,0,50">
-                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                <Frame x:Name ="Frame3" BackgroundColor="#44e6628f" CornerRadius="20" Margin="35,0,35,0">
                     <StackLayout>
                         <Label Text="Количество калорий сегодня" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
@@ -47,7 +47,7 @@
 
 
             <StackLayout Orientation ="Horizontal" Spacing="30">
-                <Button x:Name ="HistoryButton" HeightRequest="70" WidthRequest="130" CornerRadius="20" Margin="50,0,0,0" Text = "История питания" TextColor="White"  FontSize = "17" Clicked="HistoryClick">
+                <Button x:Name ="HistoryButton" BorderColor="Gray" BorderWidth="1" HeightRequest="70" WidthRequest="130" CornerRadius="20" Margin="50,0,0,0" Text = "История питания" TextColor="White"  FontSize = "17" Clicked="HistoryClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -57,7 +57,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name ="SaveButton" HeightRequest="70" WidthRequest="130" CornerRadius="20" Margin="0,0,50,0" Text = "Сохранить день" TextColor="White"  FontSize = "17" Clicked ="SaveDayClick">
+                <Button x:Name ="SaveButton" HeightRequest="70" WidthRequest="130" BorderColor="Gray" BorderWidth="1" CornerRadius="20" Margin="0,0,50,0" Text = "Сохранить день" TextColor="White"  FontSize = "17" Clicked ="SaveDayClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -71,7 +71,7 @@
 
             
             <StackLayout Orientation ="Horizontal" Spacing="0">
-                <Button x:Name ="PlanButton" HeightRequest="60" WidthRequest="195" Text="План на сегодня" TextColor="White" Margin="0,100,0,0">
+                <Button x:Name ="PlanButton" HeightRequest="60" WidthRequest="195" BorderColor="Gray" BorderWidth="1" Text="План на сегодня" TextColor="White" Margin="0,100,0,0">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -82,7 +82,7 @@
                     </Button.Background>
                 </Button>
 
-                <Button x:Name ="ReportButton" HeightRequest="60" WidthRequest="195" Text="Общий отчет" BackgroundColor="White" TextColor="Black" Margin="0,100,0,0" Clicked="ReportClick">
+                <Button x:Name ="ReportButton" HeightRequest="60" WidthRequest="195" BorderColor="Gray" BorderWidth="1" Text="Общий отчет" BackgroundColor="White" TextColor="Black" Margin="0,100,0,0" Clicked="ReportClick">
                 </Button>
             </StackLayout>
 

@@ -61,7 +61,10 @@ namespace DietManager
                         dailyRate *= 1.2;
                     }
                 }
-                caloryToday = 0;
+                string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
+                string calories = File.ReadAllText(localCaloriesPath);
+                caloryToday = int.Parse(calories);
+                if (caloryToday > dailyRate) WarningMessage();
 
             }
             else
@@ -70,6 +73,7 @@ namespace DietManager
             }
             InitializeComponent();
         }
+
 
 
         protected override void OnAppearing()
@@ -81,8 +85,8 @@ namespace DietManager
                 br.EndPoint = new Point(0, 1);
                 GradientStop FirstColor = new GradientStop();
                 GradientStop SecondColor = new GradientStop();
-                FirstColor.Color = Color.FromHex("AB74EBD5");
-                SecondColor.Color = Color.FromHex("AB9FACE6");
+                FirstColor.Color = Color.FromHex("AB9FACE6");
+                SecondColor.Color = Color.FromHex("AB74EBD5");
                 FirstColor.Offset = (float)0.1;
                 SecondColor.Offset = (float)1.0;
                 br.GradientStops.Add(FirstColor);
@@ -94,7 +98,7 @@ namespace DietManager
                 ButtonBrush.EndPoint = new Point(0, 1);
                 GradientStop FirstButtonColor = new GradientStop();
                 GradientStop SecondButtonColor = new GradientStop();
-                FirstButtonColor.Color = Color.FromHex("AB74EBD5");
+                FirstButtonColor.Color = Color.FromHex("AB9FACE6");
                 SecondButtonColor.Color = Color.FromHex("AB9FACE6");
                 FirstButtonColor.Offset = (float)0.1;
                 SecondButtonColor.Offset = (float)1.0;
@@ -116,7 +120,9 @@ namespace DietManager
                 PlanButtonBrush.GradientStops.Add(SecondPlanButtonColor);
                 PlanButton.Background = PlanButtonBrush;
 
-
+                Frame1.BackgroundColor = Color.FromHex("3f63998f");
+                Frame2.BackgroundColor = Color.FromHex("3f63998f");
+                Frame3.BackgroundColor = Color.FromHex("3f63998f");
 
             }
             else
@@ -150,13 +156,22 @@ namespace DietManager
 
         protected async void SaveDayClick(object sender, EventArgs e)
         {
+            string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
+            File.WriteAllText(localCaloriesPath, "0");
             File.WriteAllText(localDayPath, (day + 1).ToString());
+            string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
+            if (File.Exists(localHistoryPath)) { File.Delete(localHistoryPath); }
             await Navigation.PushAsync(new PlanPage());
         }
 
         protected async void HistoryClick(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new HistoryPage(gender,(int)dailyRate - caloryToday));
+        }
+
+        protected async void WarningMessage()
+        {
+            await DisplayAlert("Внимание", "Вы превысили норму калорий на сегодня, это может плохо сказаться на результатах программы", "ОК");
         }
 
 

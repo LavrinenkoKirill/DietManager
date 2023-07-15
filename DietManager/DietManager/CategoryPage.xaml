@@ -7,37 +7,31 @@
     
     <ContentPage.Content>
         <StackLayout x:Name="CategoryBG" Spacing="20">
-            <custom:CustomEntry x:Name="ProductEntry"
-                                CornerRadius="20"
-                                IsCurvedCornersEnabled="True"    
-                                HorizontalTextAlignment="Center"
-                                FontSize="15"
-                                TextColor="Black"
-                                WidthRequest="180"
-                                HeightRequest="50"
-                                Margin="10,10,10,0"
-                                Placeholder="Поиск продукта"
-                                PlaceholderColor="Gray"
-                                Keyboard="Text"/>
+
+            <Frame x:Name ="Frame1" BackgroundColor="#44e6628f" CornerRadius="20" Margin="35,10,35,0">
+                <StackLayout>
+                    <Label Text="Категории" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
 
             <StackLayout Orientation ="Horizontal" Spacing="20">
-                <Button x:Name ="MilkButton" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="10,0,0,0" Clicked="CategoryMilkClick"/>
-                <Button x:Name ="MeatButton" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Clicked="CategoryMeatClick"/>
-                <Button x:Name ="FishButton" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="0,0,5,0" Clicked="CategoryFishClick"/>
+                <Button x:Name ="MilkButton" BorderColor="Gray" BorderWidth="1" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="10,0,0,0" Clicked="CategoryMilkClick"/>
+                <Button x:Name ="MeatButton" BorderColor="Gray" BorderWidth="1" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Clicked="CategoryMeatClick"/>
+                <Button x:Name ="FishButton" BorderColor="Gray" BorderWidth="1" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="0,0,5,0" Clicked="CategoryFishClick"/>
             </StackLayout>
 
             <StackLayout Orientation ="Horizontal" Spacing="20">
-                <Button x:Name ="FruitButton" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="10,0,0,0" Clicked="CategoryFruitClick"/>
-                <Button x:Name ="VegetableButton" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Clicked="CategoryVegClick"/>
-                <Button x:Name ="BreadButton" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="0,0,5,0" Clicked="CategoryBreadClick"/>
+                <Button x:Name ="FruitButton" BorderColor="Gray" BorderWidth="1" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="10,0,0,0" Clicked="CategoryFruitClick"/>
+                <Button x:Name ="VegetableButton" BorderColor="Gray" BorderWidth="1" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Clicked="CategoryVegClick"/>
+                <Button x:Name ="BreadButton"  BorderColor="Gray" BorderWidth="1" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="0,0,5,0" Clicked="CategoryBreadClick"/>
             </StackLayout>
 
             <StackLayout Orientation ="Horizontal" Spacing="20">
-                <Button x:Name ="DrinkButton" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="10,0,0,0" Clicked="CategoryDrinkClick"/>
+                <Button x:Name ="DrinkButton" BorderColor="Gray" BorderWidth="1" HeightRequest="100" WidthRequest="110" CornerRadius="20"  BackgroundColor="White" Margin="10,0,0,0" Clicked="CategoryDrinkClick"/>
             </StackLayout>
 
             <StackLayout Orientation ="Horizontal">
-                <Button x:Name ="Back" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="10,270,85,20" Clicked="BackClick">
+                <Button x:Name ="Back" HeightRequest="53" BorderColor="Gray" BorderWidth="1" WidthRequest="64" CornerRadius="180" Margin="10,260,85,20" Clicked="BackClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -49,7 +43,7 @@
                 </Button>
 
 
-                <Button x:Name ="Home" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="0,270,10,20" Clicked="HomeClick">
+                <Button x:Name ="Home" HeightRequest="53" BorderColor="Gray" BorderWidth="1" WidthRequest="64" CornerRadius="180" Margin="0,260,10,20" Clicked="HomeClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"

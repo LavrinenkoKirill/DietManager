@@ -15,7 +15,7 @@
                 </LinearGradientBrush>
             </StackLayout.Background>
 
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34">
+            <Frame BackgroundColor="#44e6628f" CornerRadius="20" Margin="34">
                 <StackLayout>
                     <Label Text="Выберите ваш пол" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
@@ -30,24 +30,24 @@
 
             
             <StackLayout Orientation ="Horizontal">
-                <RadioButton x:Name ="MaleButton" Content = "Мужчина" TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="40" WidthRequest="150" Margin="20,0,20,30" GroupName="state">
+                <RadioButton x:Name ="MaleButton" Content = "Мужчина" BorderColor="Gray" BorderWidth="1" TextColor="Black"  FontSize = "17"  CornerRadius="20"  HeightRequest="40" WidthRequest="150" Margin="20,0,20,30" GroupName="state">
                     <RadioButton.Background>
-                        <LinearGradientBrush>
-                            <GradientStop Color = "#ABF9D423"
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color = "#F68084"
                             Offset= "0.1" />
-                            <GradientStop Color=  "#E14FAD"
+                            <GradientStop Color=  "#FAB2B5"
                              Offset= "1.0" />
                         </LinearGradientBrush>
                     </RadioButton.Background>
                 </RadioButton>
 
-                <RadioButton x:Name ="FemaleButton" Content = "Женщина" TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="40" WidthRequest="150" Margin="25,0,0,30" GroupName="state">
+                <RadioButton x:Name ="FemaleButton" Content = "Женщина" TextColor="Black" BorderColor="Gray" BorderWidth="1" FontSize = "17"  CornerRadius="20"  HeightRequest="40" WidthRequest="150" Margin="25,0,0,30" GroupName="state">
                     <RadioButton.Background>
-                        <LinearGradientBrush>
-                            <GradientStop Color = "#ABF9D423"
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color = "#F68084"
                             Offset= "0.1" />
-                            <GradientStop Color=  "#E14FAD"
-                            Offset= "1.0" />
+                            <GradientStop Color=  "#FAB2B5"
+                             Offset= "1.0" />
                         </LinearGradientBrush>
                     </RadioButton.Background>
                 </RadioButton>
@@ -56,7 +56,7 @@
 
 
             <StackLayout Orientation ="Horizontal">
-                <Button x:Name="GenderBack" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="10,200,240,10" Clicked="GenderBackClick">
+                <Button x:Name="GenderBack" HeightRequest="53" WidthRequest="64" BorderColor="Gray" BorderWidth="1" CornerRadius="180" Margin="10,200,240,10" Clicked="GenderBackClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -67,7 +67,7 @@
                     </Button.Background>
                 </Button>
 
-                <Button x:Name ="GenderForward" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="0,200,10,10" Clicked="GenderClick">
+                <Button x:Name ="GenderForward" HeightRequest="53" WidthRequest="64" BorderColor="Gray" BorderWidth="1" CornerRadius="180" Margin="0,200,10,10" Clicked="GenderClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"

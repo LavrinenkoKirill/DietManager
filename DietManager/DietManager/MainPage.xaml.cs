@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace DietManager
@@ -12,7 +14,7 @@ namespace DietManager
 
         protected override void OnAppearing()
         {
-            Logo.Source = ImageSource.FromResource("DietManager.logo2.png");
+            Logo.Source = ImageSource.FromResource("DietManager.images.logo2.png");
         }
 
 
@@ -23,7 +25,13 @@ namespace DietManager
 
         protected async void ContinueProgramClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PlanPage());
+            string dayPath = Path.Combine(FileSystem.CacheDirectory, "Day.txt");
+            if (File.Exists(dayPath)) await Navigation.PushAsync(new PlanPage());
+            else
+            {
+                await DisplayAlert("Ошибка загрузки программы", "Программа не найдена", "ОК");
+                return;
+            }
         }
     }
 }

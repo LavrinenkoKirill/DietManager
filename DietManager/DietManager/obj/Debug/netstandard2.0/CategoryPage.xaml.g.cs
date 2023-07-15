@@ -20,7 +20,7 @@ namespace DietManager {
         private global::Xamarin.Forms.StackLayout CategoryBG;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::DietManager.CustomEntry ProductEntry;
+        private global::Xamarin.Forms.Frame Frame1;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button MilkButton;
@@ -53,7 +53,7 @@ namespace DietManager {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(CategoryPage));
             CategoryBG = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "CategoryBG");
-            ProductEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::DietManager.CustomEntry>(this, "ProductEntry");
+            Frame1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Frame>(this, "Frame1");
             MilkButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "MilkButton");
             MeatButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "MeatButton");
             FishButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "FishButton");

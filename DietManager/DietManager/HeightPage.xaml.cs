@@ -25,8 +25,8 @@ namespace DietManager
                 br.EndPoint = new Point(0, 1);
                 GradientStop FirstColor = new GradientStop();
                 GradientStop SecondColor = new GradientStop();
-                FirstColor.Color = Color.FromHex("AB74EBD5");
-                SecondColor.Color = Color.FromHex("AB9FACE6");
+                FirstColor.Color = Color.FromHex("AB9FACE6"); 
+                SecondColor.Color = Color.FromHex("AB74EBD5"); 
                 FirstColor.Offset = (float)0.1;
                 SecondColor.Offset = (float)1.0;
                 br.GradientStops.Add(FirstColor);
@@ -46,6 +46,9 @@ namespace DietManager
                 ButtonBrush.GradientStops.Add(SecondButtonColor);
                 Back.Background = ButtonBrush;
                 Forward.Background = ButtonBrush;
+
+                HeightImage.Source = ImageSource.FromResource("DietManager.images.manrun.png");
+                Frame1.BackgroundColor = Color.FromHex("3f63998f");
             }
             else
             {
@@ -61,13 +64,14 @@ namespace DietManager
                 br.GradientStops.Add(FirstColor);
                 br.GradientStops.Add(SecondColor);
                 BG.Background = br;
+                HeightImage.Source = ImageSource.FromResource("DietManager.images.wheight.png");
 
 
             }
 
-            HeightImage.Source = ImageSource.FromResource("DietManager.wheight.png");
-            Back.ImageSource = ImageSource.FromResource("DietManager.smb.png");
-            Forward.ImageSource = ImageSource.FromResource("DietManager.smf.png");
+            
+            Back.ImageSource = ImageSource.FromResource("DietManager.images.smb.png");
+            Forward.ImageSource = ImageSource.FromResource("DietManager.images.smf.png");
 
         }
 

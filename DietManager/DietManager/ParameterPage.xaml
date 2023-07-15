@@ -7,13 +7,13 @@
 
     <ContentPage.Content>
         <StackLayout x:Name="HeightBG">
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin ="15,34,15,34" HeightRequest="30" WidthRequest="10">
+            <Frame x:Name ="Frame1" BackgroundColor="#44e6628f" CornerRadius="20" Margin ="15,34,15,34" HeightRequest="30" WidthRequest="10">
                 <StackLayout>
                     <Label Text="Укажите ваши параметры" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
             </Frame>
 
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34,0,34,20">
+            <Frame x:Name ="Frame2" BackgroundColor="#44e6628f" CornerRadius="20" Margin="34,0,34,20">
                 <StackLayout>
                     <Label Text="Сколько вы весите сейчас?" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
@@ -41,7 +41,7 @@
                 </Frame>
             </StackLayout>
 
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34,34,34,20">
+            <Frame x:Name ="Frame3" BackgroundColor="#44e6628f" CornerRadius="20" Margin="34,34,34,20">
                 <StackLayout>
                     <Label Text="Сколько вы хотите весить?" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
@@ -69,7 +69,7 @@
                 </Frame>
             </StackLayout>
 
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34,34,34,20">
+            <Frame x:Name="Frame4" BackgroundColor="#44e6628f" CornerRadius="20" Margin="34,34,34,20">
                 <StackLayout>
                     <Label Text="Укажите ваш возраст" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
@@ -97,8 +97,7 @@
             </StackLayout>
 
             <StackLayout Orientation ="Horizontal">
-                <Button x:Name ="ParameterBack" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="10,10,240,10" Clicked="ParameterBackClick">
-                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                <Button x:Name ="ParameterBack" HeightRequest="53" BorderColor="Gray" BorderWidth="1" WidthRequest="64" CornerRadius="180" Margin="10,10,240,10" Clicked="ParameterBackClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -109,8 +108,7 @@
                     </Button.Background>
                 </Button>
 
-                <Button x:Name ="ParameterForward" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="0,10,220,10" Clicked="ParameterClick">
-                    <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
+                <Button x:Name ="ParameterForward" HeightRequest="53" BorderColor="Gray" BorderWidth="1" WidthRequest="64" CornerRadius="180" Margin="0,10,220,10" Clicked="ParameterClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"

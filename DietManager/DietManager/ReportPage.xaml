@@ -9,15 +9,15 @@
         <StackLayout x:Name="ReportBG">
           
             <StackLayout Spacing="20" Margin="0,20,0,30">
-                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                <Frame x:Name="Frame1" BackgroundColor="#44e6628f" CornerRadius="20" Margin="35,0,35,0">
                     <StackLayout>
                         <Label Text="Завершенные дни" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </Frame>
 
                 <Frame BackgroundColor="White" HeightRequest="10" WidthRequest="50" CornerRadius ="20" Margin="60,0,60,0">
-                    <StackLayout>
-                        <Label x:Name="completedDaysLabel" TextColor="Gray" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="5"/>
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Label x:Name="completedDaysLabel" TextColor="Gray" FontSize = "15"  HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
 
                 </Frame>
@@ -25,7 +25,7 @@
 
 
             <StackLayout Spacing="20" Margin="0,0,0,30">
-                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                <Frame x:Name ="Frame2" BackgroundColor="#44e6628f" CornerRadius="20" Margin="35,0,35,0">
                     <StackLayout>
                         <Label Text="Дней осталось" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
@@ -41,7 +41,7 @@
 
 
             <StackLayout Spacing="20" Margin="0,0,0,30">
-                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                <Frame x:Name ="Frame3" BackgroundColor="#44e6628f" CornerRadius="20" Margin="35,0,35,0">
                     <StackLayout>
                         <Label x:Name="burnOrGetLabel" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
@@ -57,7 +57,7 @@
             </StackLayout>
 
             <StackLayout Spacing="20" Margin="0,0,0,30">
-                <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+                <Frame x:Name ="Frame4" BackgroundColor="#44e6628f" CornerRadius="20" Margin="35,0,35,0">
                     <StackLayout>
                         <Label Text="Текущий вес" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
@@ -73,11 +73,11 @@
             </StackLayout>
 
             <StackLayout Orientation ="Horizontal" Spacing="0">
-                <Button x:Name ="RButton" HeightRequest="60" WidthRequest="195" Text="План на сегодня" BackgroundColor="White" TextColor="Black" Margin="0,0,0,0" Clicked="PClick">
+                <Button x:Name ="RButton" HeightRequest="60" WidthRequest="195" Text="План на сегодня" BorderColor="Gray" BorderWidth="1" BackgroundColor="White" TextColor="Black" Margin="0,0,0,0" Clicked="PClick">
                     <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
                 </Button>
-                
-                <Button x:Name ="PButton" HeightRequest="60" WidthRequest="195" Text="Общий отчет" TextColor="White" Margin="0,0,0,0">
+
+                <Button x:Name ="PButton" HeightRequest="60" WidthRequest="195" Text="Общий отчет" BorderColor="Gray" BorderWidth="1" TextColor="White" Margin="0,0,0,0">
                     <!--ImageSource ="https://w7.pngwing.com/pngs/29/743/png-transparent-computer-icons-down-arrow-angle-monochrome-black.png"-->
                     <Button.Background>
                         <LinearGradientBrush>

@@ -15,10 +15,10 @@ namespace DietManager
 
         protected override void OnAppearing()
         {
-            Male.Source = ImageSource.FromResource("DietManager.male1.png");
-            Female.Source = ImageSource.FromResource("DietManager.female1.png");
-            GenderBack.ImageSource = ImageSource.FromResource("DietManager.smb.png");
-            GenderForward.ImageSource = ImageSource.FromResource("DietManager.smf.png");
+            Male.Source = ImageSource.FromResource("DietManager.images.male1.png");
+            Female.Source = ImageSource.FromResource("DietManager.images.female1.png");
+            GenderBack.ImageSource = ImageSource.FromResource("DietManager.images.smb.png");
+            GenderForward.ImageSource = ImageSource.FromResource("DietManager.images.smf.png");
         }
 
         protected async void GenderClick(object sender, EventArgs e)

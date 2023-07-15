@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -12,42 +12,47 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="bread.png" />
-    <None Remove="drink.png" />
-    <None Remove="female1.png" />
-    <None Remove="fish.png" />
-    <None Remove="fruit.png" />
-    <None Remove="home.png" />
+    <None Remove="images\bread.png" />
+    <None Remove="images\drink.png" />
+    <None Remove="images\female1.png" />
+    <None Remove="images\fish.png" />
+    <None Remove="images\fruit.png" />
+    <None Remove="images\home.png" />
+    <None Remove="images\logo2.png" />
+    <None Remove="images\male1.png" />
+    <None Remove="images\manrun.png" />
+    <None Remove="images\meat.png" />
+    <None Remove="images\plus.png" />
+    <None Remove="images\plus7.png" />
+    <None Remove="images\ps.png" />
+    <None Remove="images\smb.png" />
+    <None Remove="images\smf.png" />
+    <None Remove="images\smilk.png" />
+    <None Remove="images\veg.png" />
+    <None Remove="images\wheight.png" />
     <None Remove="logo.png" />
-    <None Remove="logo2.png" />
-    <None Remove="male1.png" />
-    <None Remove="meat.png" />
-    <None Remove="plus.png" />
-    <None Remove="ps.png" />
-    <None Remove="smb.png" />
-    <None Remove="smf.png" />
-    <None Remove="smilk.png" />
-    <None Remove="veg.png" />
-    <None Remove="wheight.png" />
+    <None Remove="plus2.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="bread.png" />
-    <EmbeddedResource Include="drink.png" />
-    <EmbeddedResource Include="female1.png" />
-    <EmbeddedResource Include="fish.png" />
-    <EmbeddedResource Include="fruit.png" />
-    <EmbeddedResource Include="home.png" />
-    <EmbeddedResource Include="logo2.png" />
-    <EmbeddedResource Include="male1.png" />
-    <EmbeddedResource Include="meat.png" />
-    <EmbeddedResource Include="plus.png" />
-    <EmbeddedResource Include="ps.png" />
-    <EmbeddedResource Include="smb.png" />
-    <EmbeddedResource Include="smf.png" />
-    <EmbeddedResource Include="smilk.png" />
-    <EmbeddedResource Include="veg.png" />
-    <EmbeddedResource Include="wheight.png" />
+    <EmbeddedResource Include="images\bread.png" />
+    <EmbeddedResource Include="images\drink.png" />
+    <EmbeddedResource Include="images\female1.png" />
+    <EmbeddedResource Include="images\fish.png" />
+    <EmbeddedResource Include="images\fruit.png" />
+    <EmbeddedResource Include="images\home.png" />
+    <EmbeddedResource Include="images\logo2.png" />
+    <EmbeddedResource Include="images\male1.png" />
+    <EmbeddedResource Include="images\manrun.png" />
+    <EmbeddedResource Include="images\meat.png" />
+    <EmbeddedResource Include="images\plus.png" />
+    <EmbeddedResource Include="images\plus7.png" />
+    <EmbeddedResource Include="images\ps.png" />
+    <EmbeddedResource Include="images\smb.png" />
+    <EmbeddedResource Include="images\smf.png" />
+    <EmbeddedResource Include="images\smilk.png" />
+    <EmbeddedResource Include="images\veg.png" />
+    <EmbeddedResource Include="images\wheight.png" />
   </ItemGroup>
 
   <ItemGroup>

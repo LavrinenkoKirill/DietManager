@@ -7,7 +7,7 @@
     
     <ContentPage.Content>
         <StackLayout x:Name="BG">
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="34">
+            <Frame x:Name ="Frame1" BackgroundColor="#44e6628f" CornerRadius="20" Margin="34">
                 <StackLayout>
                     <Label Text="Укажите ваш рост" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>
@@ -39,7 +39,7 @@
             </StackLayout>
 
             <StackLayout Orientation ="Horizontal">
-                <Button x:Name ="Back" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="10,0,240,10" Clicked="HeightBackClick">
+                <Button x:Name ="Back" HeightRequest="53" BorderColor="Gray" BorderWidth="1" WidthRequest="64" CornerRadius="180" Margin="10,0,240,10" Clicked="HeightBackClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -50,7 +50,7 @@
                     </Button.Background>
                 </Button>
 
-                <Button x:Name ="Forward" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="0,0,10,10" Clicked="HeightClick">
+                <Button x:Name ="Forward" HeightRequest="53" BorderColor="Gray" BorderWidth="1" WidthRequest="64" CornerRadius="180" Margin="0,0,10,10" Clicked="HeightClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"

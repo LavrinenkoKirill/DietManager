@@ -24,6 +24,41 @@ namespace DietManager
             this.calories = calories;
         }
 
+        protected void GetProducts(string path)
+        {
+            string products = File.ReadAllText(path);
+            string[] pars = products.Split('\n');
+            for (int i = 0; i < pars.Length; i++)
+            {
+                string[] info = pars[i].Split(' ');
+                Frame prod = new Frame();
+                prod.HeightRequest = 18;
+                prod.WidthRequest = 270;
+                prod.Margin = new Thickness(10, 0, 0, 0);
+                prod.BackgroundColor = Color.White;
+                prod.CornerRadius = 20;
+                Label label = new Label();
+                label.Text = info[0] + ", " + info[1] + ' ' + "калорий на 100 грамм";
+                label.TextColor = Color.Black;
+                prod.Content = label;
+                InfoButton button = new InfoButton();
+                button.WidthRequest = 50;
+                button.Margin = new Thickness(10, 0, 20, 0);
+                button.setProduct(info[0]);
+                button.setCaloriesValue(int.Parse(info[1]));
+                StackLayout stack = new StackLayout();
+                stack.Spacing = 20;
+                stack.Orientation = StackOrientation.Horizontal;
+                stack.Children.Add(prod);
+                stack.Children.Add(button);
+                button.HeightRequest = 15;
+                button.ImageSource = ImageSource.FromResource("DietManager.images.plus7.png");
+                button.Clicked += AddClick;
+                ChooseProductBG.Children.Add(stack);
+
+            }
+        }
+
         protected override void OnAppearing()
         {
             if (gender == "Male")
@@ -33,8 +68,8 @@ namespace DietManager
                 br.EndPoint = new Point(0, 1);
                 GradientStop FirstColor = new GradientStop();
                 GradientStop SecondColor = new GradientStop();
-                FirstColor.Color = Color.FromHex("AB74EBD5");
-                SecondColor.Color = Color.FromHex("AB9FACE6");
+                FirstColor.Color = Color.FromHex("AB9FACE6");
+                SecondColor.Color = Color.FromHex("AB74EBD5");
                 FirstColor.Offset = (float)0.1;
                 SecondColor.Offset = (float)1.0;
                 br.GradientStops.Add(FirstColor);
@@ -52,9 +87,10 @@ namespace DietManager
                 SecondButtonColor.Offset = (float)1.0;
                 ButtonBrush.GradientStops.Add(FirstButtonColor);
                 ButtonBrush.GradientStops.Add(SecondButtonColor);
-               // Back.Background = ButtonBrush;
-               // Home.Background = ButtonBrush;
+                // Back.Background = ButtonBrush;
+                // Home.Background = ButtonBrush;
 
+                Frame1.BackgroundColor = Color.FromHex("3f63998f");
 
 
             }
@@ -80,222 +116,18 @@ namespace DietManager
            // Home.ImageSource = ImageSource.FromResource("DietManager.home.png");
             CategoryNameLabel.Text = category;
 
+            string localPath;
 
-            if (category == "Молочные продукты") 
-            {
-                string localMilkPath = Path.Combine(FileSystem.CacheDirectory, "MilkProducts.txt");
-                string products = File.ReadAllText(localMilkPath);
-                string[] pars = products.Split('\n');
-                for (int i = 0; i < pars.Length; i++)
-                {
-                    string[] info = pars[i].Split(' ');
-                    Frame prod = new Frame();
-                    prod.Margin = new Thickness(10, 0, 0, 0);
-                    prod.BackgroundColor = Color.White;
-                    prod.CornerRadius = 20;
-                    Label label = new Label();
-                    label.Text = info[0] + ", " + info[1] + ' ' + "калорий на 100 грамм";
-                    label.TextColor = Color.Black;
-                    prod.Content = label;
-                    Button button = new Button();
-                    button.HeightRequest = 10;
-                    button.WidthRequest = 30;
-                    button.Margin = new Thickness(0, 0, 20, 0);
-                    button.ImageSource = ImageSource.FromResource("DietManager.plus.png");
-                    StackLayout stack = new StackLayout();
-                    stack.Spacing = 20;
-                    stack.Orientation = StackOrientation.Horizontal;
-                    stack.Children.Add(prod);
-                    stack.Children.Add(button);
-                    ChooseProductBG.Children.Add(stack);
+            if (category == "Молочные продукты") localPath = Path.Combine(FileSystem.CacheDirectory, "MilkProducts.txt");
+            else if (category == "Мясные продукты") localPath = Path.Combine(FileSystem.CacheDirectory, "MeatProducts.txt");
+            else if (category == "Рыбные продукты") localPath = Path.Combine(FileSystem.CacheDirectory, "FishProducts.txt");
+            else if (category == "Фрукты") localPath = Path.Combine(FileSystem.CacheDirectory, "FruitProducts.txt");
+            else if (category == "Овощи") localPath = Path.Combine(FileSystem.CacheDirectory, "VegetableProducts.txt");
+            else if (category == "Хлебные изделия") localPath = Path.Combine(FileSystem.CacheDirectory, "BreadProducts.txt");
+            else localPath = Path.Combine(FileSystem.CacheDirectory, "DrinkProducts.txt");
 
-                }
-            }
-
-            if (category == "Мясные продукты")
-            {
-                string localMeatPath = Path.Combine(FileSystem.CacheDirectory, "MeatProducts.txt");
-                string products = File.ReadAllText(localMeatPath);
-                string[] pars = products.Split('\n');
-                for (int i = 0; i < pars.Length; i++)
-                {
-                    string[] info = pars[i].Split(' ');
-                    Frame prod = new Frame();
-                    prod.Margin = new Thickness(10, 0, 0, 0);
-                    prod.BackgroundColor = Color.White;
-                    prod.CornerRadius = 20;
-                    Label label = new Label();
-                    label.Text = info[0] + ", " + info[1] + ' ' + "калорий на 100 грамм";
-                    label.TextColor = Color.Black;
-                    prod.Content = label;
-                    Button button = new Button();
-                    button.HeightRequest = 10;
-                    button.WidthRequest = 30;
-                    button.Margin = new Thickness(0, 0, 20, 0);
-                    button.ImageSource = ImageSource.FromResource("DietManager.plus.png");
-                    StackLayout stack = new StackLayout();
-                    stack.Spacing = 20;
-                    stack.Orientation = StackOrientation.Horizontal;
-                    stack.Children.Add(prod);
-                    stack.Children.Add(button);
-                    ChooseProductBG.Children.Add(stack);
-
-                }
-            }
-
-            if (category == "Рыбные продукты")
-            {
-                string localFishPath = Path.Combine(FileSystem.CacheDirectory, "FishProducts.txt");
-                string products = File.ReadAllText(localFishPath);
-                string[] pars = products.Split('\n');
-                for (int i = 0; i < pars.Length; i++)
-                {
-                    string[] info = pars[i].Split(' ');
-                    Frame prod = new Frame();
-                    prod.Margin = new Thickness(10, 0, 0, 0);
-                    prod.BackgroundColor = Color.White;
-                    prod.CornerRadius = 20;
-                    Label label = new Label();
-                    label.Text = info[0] + ", " + info[1] + ' ' + "калорий на 100 грамм";
-                    label.TextColor = Color.Black;
-                    prod.Content = label;
-                    Button button = new Button();
-                    button.HeightRequest = 10;
-                    button.WidthRequest = 30;
-                    button.Margin = new Thickness(0, 0, 20, 0);
-                    button.ImageSource = ImageSource.FromResource("DietManager.plus.png");
-                    StackLayout stack = new StackLayout();
-                    stack.Spacing = 20;
-                    stack.Orientation = StackOrientation.Horizontal;
-                    stack.Children.Add(prod);
-                    stack.Children.Add(button);
-                    ChooseProductBG.Children.Add(stack);
-
-                }
-            }
-            if (category == "Фрукты")
-            {
-                string localFruitPath = Path.Combine(FileSystem.CacheDirectory, "FruitProducts.txt");
-                string products = File.ReadAllText(localFruitPath);
-                string[] pars = products.Split('\n');
-                for (int i = 0; i < pars.Length; i++)
-                {
-                    string[] info = pars[i].Split(' ');
-                    Frame prod = new Frame();
-                    prod.Margin = new Thickness(10, 0, 0, 0);
-                    prod.BackgroundColor = Color.White;
-                    prod.CornerRadius = 20;
-                    Label label = new Label();
-                    label.Text = info[0] + ", " + info[1] + ' ' + "калорий на 100 грамм";
-                    label.TextColor = Color.Black;
-                    prod.Content = label;
-                    Button button = new Button();
-                    button.HeightRequest = 10;
-                    button.WidthRequest = 30;
-                    button.Margin = new Thickness(0, 0, 20, 0);
-                    button.ImageSource = ImageSource.FromResource("DietManager.plus.png");
-                    StackLayout stack = new StackLayout();
-                    stack.Spacing = 20;
-                    stack.Orientation = StackOrientation.Horizontal;
-                    stack.Children.Add(prod);
-                    stack.Children.Add(button);
-                    ChooseProductBG.Children.Add(stack);
-
-                }
-            }
-            if (category == "Овощи")
-            {
-                string localVegPath = Path.Combine(FileSystem.CacheDirectory, "VegetableProducts.txt");
-                string products = File.ReadAllText(localVegPath);
-                string[] pars = products.Split('\n');
-                for (int i = 0; i < pars.Length; i++)
-                {
-                    string[] info = pars[i].Split(' ');
-                    Frame prod = new Frame();
-                    prod.Margin = new Thickness(10, 0, 0, 0);
-                    prod.BackgroundColor = Color.White;
-                    prod.CornerRadius = 20;
-                    Label label = new Label();
-                    label.Text = info[0] + ", " + info[1] + ' ' + "калорий на 100 грамм";
-                    label.TextColor = Color.Black;
-                    prod.Content = label;
-                    Button button = new Button();
-                    button.HeightRequest = 10;
-                    button.WidthRequest = 30;
-                    button.Margin = new Thickness(0, 0, 20, 0);
-                    button.ImageSource = ImageSource.FromResource("DietManager.plus.png");
-                    StackLayout stack = new StackLayout();
-                    stack.Spacing = 20;
-                    stack.Orientation = StackOrientation.Horizontal;
-                    stack.Children.Add(prod);
-                    stack.Children.Add(button);
-                    ChooseProductBG.Children.Add(stack);
-
-                }
-            }
-            if (category == "Хлебные изделия")
-            {
-                string localBreadPath = Path.Combine(FileSystem.CacheDirectory, "BreadProducts.txt");
-                string products = File.ReadAllText(localBreadPath);
-                string[] pars = products.Split('\n');
-                for (int i = 0; i < pars.Length; i++)
-                {
-                    string[] info = pars[i].Split(' ');
-                    Frame prod = new Frame();
-                    prod.Margin = new Thickness(10, 0, 0, 0);
-                    prod.BackgroundColor = Color.White;
-                    prod.CornerRadius = 20;
-                    Label label = new Label();
-                    label.Text = info[0] + ", " + info[1] + ' ' + "калорий на 100 грамм";
-                    label.TextColor = Color.Black;
-                    prod.Content = label;
-                    Button button = new Button();
-                    button.HeightRequest = 10;
-                    button.WidthRequest = 30;
-                    button.Margin = new Thickness(0, 0, 20, 0);
-                    button.ImageSource = ImageSource.FromResource("DietManager.plus.png");
-                    StackLayout stack = new StackLayout();
-                    stack.Spacing = 20;
-                    stack.Orientation = StackOrientation.Horizontal;
-                    stack.Children.Add(prod);
-                    stack.Children.Add(button);
-                    ChooseProductBG.Children.Add(stack);
-
-                }
-            }
-            if (category == "Напитки")
-            {
-                string localDrinkPath = Path.Combine(FileSystem.CacheDirectory, "DrinkProducts.txt");
-                string products = File.ReadAllText(localDrinkPath);
-                string[] pars = products.Split('\n');
-                for (int i = 0; i < pars.Length; i++)
-                {
-                    string[] info = pars[i].Split(' ');
-                    Frame prod = new Frame();
-                    prod.Margin = new Thickness(10, 0, 0, 0);
-                    prod.BackgroundColor = Color.White;
-                    prod.CornerRadius = 20;
-                    Label label = new Label();
-                    label.Text = info[0] + ", " + info[1] + ' ' + "калорий на 100 грамм";
-                    label.TextColor = Color.Black;
-                    prod.Content = label;
-                    Button button = new Button();
-                    button.HeightRequest = 10;
-                    button.WidthRequest = 30;
-                    button.Margin = new Thickness(0, 0, 20, 0);
-                    button.ImageSource = ImageSource.FromResource("DietManager.plus.png");
-                    StackLayout stack = new StackLayout();
-                    stack.Spacing = 20;
-                    stack.Orientation = StackOrientation.Horizontal;
-                    stack.Children.Add(prod);
-                    stack.Children.Add(button);
-                    ChooseProductBG.Children.Add(stack);
-
-                }
-            }
-
-
-
+            GetProducts(localPath);
+      
         }
 
         protected async void BackClick(object sender, EventArgs e)
@@ -306,14 +138,35 @@ namespace DietManager
 
         protected async void HomeClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PlanPage());
+            await Navigation.PushAsync(new MainPage());
 
         }
 
-        protected async void AddClick(object sender, EventArgs e, string info0, string info1)
+        protected async void AddClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PlanPage());
+            InfoButton infoButton = (InfoButton)sender;
+            string result = await DisplayPromptAsync("Вес продукта", "Пожалуйста, укажите вес продукта в граммах");
+            int gram = int.Parse(result);
 
+            string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
+            File.AppendAllText(localHistoryPath, infoButton.getProduct() + ' ' + gram.ToString() + '\n');
+
+            if (gram < 1 || gram > 1000000) 
+            {
+                await DisplayAlert("Некорректный вес", "Пожалуйста, укажите положительный вес продукта", "Ок");
+                return;
+            }
+            else
+            {
+                string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
+                string prevCal = File.ReadAllText(localCaloriesPath);
+                int prev = int.Parse(prevCal);
+                prev += (int)((infoButton.getCaloriesValue() / 100) * gram);
+                File.WriteAllText(localCaloriesPath, prev.ToString());
+                var answer = DisplayAlert("Отлично", "Продукт успешно добавлен", "ОК");
+                if (answer != null) { await Navigation.PushAsync(new PlanPage()); }
+
+            }
         }
 
     }

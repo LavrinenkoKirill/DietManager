@@ -20,31 +20,31 @@
 
 
 
-        <Frame BackgroundColor="#ABAC62E6" CornerRadius="20"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="60,0,60,0">
+        <Frame BackgroundColor="#44e6628f" CornerRadius="20"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="60,0,60,0">
             <StackLayout>
                 <Label Text="Diet Manager — ваш персональный карманный диетолог" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
             </StackLayout>
             
         </Frame>
 
-        <Button Text = "Начать новую программу" TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="50" WidthRequest="236" Margin ="60,150,60,10" Clicked="ButtonClick">
+        <Button Text = "Начать новую программу" TextColor="White" BorderColor="Gray" BorderWidth="1" FontSize = "17"  CornerRadius="20"  HeightRequest="50" WidthRequest="236" Margin ="60,150,60,10" Clicked="ButtonClick">
             <Button.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color = "#FF9A9E"
-                          Offset= "0.1" />
-                    <GradientStop Color=  "#FFB5E7"
-                          Offset= "1.0" />
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color = "#F68084"
+                            Offset= "0.1" />
+                    <GradientStop Color=  "#FAB2B5"
+                             Offset= "1.0" />
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
 
-        <Button Text = "Продолжить программу"   TextColor="White"  FontSize = "17"  CornerRadius="20"  HeightRequest="49" WidthRequest="236" Margin= "60,0,60,30" Clicked="ContinueProgramClick">
+        <Button Text = "Продолжить программу"   TextColor="White" BorderColor="Gray" BorderWidth="1" FontSize = "17"  CornerRadius="20"  HeightRequest="49" WidthRequest="236" Margin= "60,0,60,30" Clicked="ContinueProgramClick">
             <Button.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color = "#FF9A9E"
-                          Offset= "0.1" />
-                    <GradientStop Color=  "#FFB5E7"
-                          Offset= "1.0" />
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color = "#F68084"
+                            Offset= "0.1" />
+                    <GradientStop Color=  "#FAB2B5"
+                             Offset= "1.0" />
                 </LinearGradientBrush>
             </Button.Background>
         </Button>

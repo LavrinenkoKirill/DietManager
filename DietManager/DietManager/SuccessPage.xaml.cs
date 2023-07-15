@@ -33,7 +33,7 @@ namespace DietManager
 
         protected override void OnAppearing()
         {
-            SuccessImage.Source = ImageSource.FromResource("DietManager.ps.png");
+            SuccessImage.Source = ImageSource.FromResource("DietManager.images.ps.png");
 
             if (gender == "Male")
             {
@@ -42,8 +42,8 @@ namespace DietManager
                 br.EndPoint = new Point(0, 1);
                 GradientStop FirstColor = new GradientStop();
                 GradientStop SecondColor = new GradientStop();
-                FirstColor.Color = Color.FromHex("AB74EBD5");
-                SecondColor.Color = Color.FromHex("AB9FACE6");
+                FirstColor.Color = Color.FromHex("AB9FACE6"); 
+                SecondColor.Color = Color.FromHex("AB74EBD5"); 
                 FirstColor.Offset = (float)0.1;
                 SecondColor.Offset = (float)1.0;
                 br.GradientStops.Add(FirstColor);
@@ -55,13 +55,16 @@ namespace DietManager
                 ButtonBrush.EndPoint = new Point(0, 1);
                 GradientStop FirstButtonColor = new GradientStop();
                 GradientStop SecondButtonColor = new GradientStop();
-                FirstButtonColor.Color = Color.FromHex("AB74EBD5");
+                FirstButtonColor.Color = Color.FromHex("AB9FACE6");
                 SecondButtonColor.Color = Color.FromHex("AB9FACE6");
                 FirstButtonColor.Offset = (float)0.1;
                 SecondButtonColor.Offset = (float)1.0;
                 ButtonBrush.GradientStops.Add(FirstButtonColor);
                 ButtonBrush.GradientStops.Add(SecondButtonColor);
                 StartProgramButton.Background = ButtonBrush;
+
+
+                Frame1.BackgroundColor = Color.FromHex("3f63998f");
             }
             else
             {
@@ -99,6 +102,11 @@ namespace DietManager
             string localVegPath = Path.Combine(FileSystem.CacheDirectory,   "VegetableProducts.txt");
             string localBreadPath = Path.Combine(FileSystem.CacheDirectory, "BreadProducts.txt");
             string localDrinkPath = Path.Combine(FileSystem.CacheDirectory, "DrinkProducts.txt");
+            string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
+            string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
+            if (File.Exists(localHistoryPath)) { File.Delete(localHistoryPath); }
+
+
 
             string milk = "Молоко " + "70" + '\n' + "Сыр " + "363" + '\n' + "Масло " + "748";
             File.WriteAllText(localMilkPath, milk);
@@ -121,6 +129,9 @@ namespace DietManager
             string drink = "Чай " + "140" + '\n' + "Кофе " + "280" + '\n' + "Сок(яблочный) " + "42";
             File.WriteAllText(localDrinkPath, drink);
 
+            string caloryToday = "0";
+            File.WriteAllText(localCaloriesPath, caloryToday);
+          
 
             await Navigation.PushAsync(new PlanPage());
 

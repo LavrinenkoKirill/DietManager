@@ -7,20 +7,8 @@
     
     <ContentPage.Content>
         <StackLayout x:Name="ChooseProductBG" Spacing="20">
-            <custom:CustomEntry x:Name="ProductEntry"
-                                CornerRadius="20"
-                                IsCurvedCornersEnabled="True"    
-                                HorizontalTextAlignment="Center"
-                                FontSize="15"
-                                TextColor="Black"
-                                WidthRequest="180"
-                                HeightRequest="50"
-                                Margin="10,10,10,0"
-                                Placeholder="Поиск продукта"
-                                PlaceholderColor="Gray"
-                                Keyboard="Text"/>
 
-            <Frame BackgroundColor="#ABAC62E6" CornerRadius="20" Margin="35,0,35,0">
+            <Frame x:Name ="Frame1" BackgroundColor="#44e6628f" CornerRadius="20" Margin="35,10,35,0">
                 <StackLayout>
                     <Label x:Name="CategoryNameLabel" TextColor="White" FontSize = "17" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center"/>
                 </StackLayout>

@@ -30,8 +30,8 @@ namespace DietManager
                 br.EndPoint = new Point(0, 1);
                 GradientStop FirstColor = new GradientStop();
                 GradientStop SecondColor = new GradientStop();
-                FirstColor.Color = Color.FromHex("AB74EBD5");
-                SecondColor.Color = Color.FromHex("AB9FACE6");
+                FirstColor.Color = Color.FromHex("AB9FACE6");
+                SecondColor.Color = Color.FromHex("AB74EBD5");
                 FirstColor.Offset = (float)0.1;
                 SecondColor.Offset = (float)1.0;
                 br.GradientStops.Add(FirstColor);
@@ -52,6 +52,7 @@ namespace DietManager
                 Back.Background = ButtonBrush;
                 Home.Background = ButtonBrush;
 
+                Frame1.BackgroundColor = Color.FromHex("3f63998f");
 
 
             }
@@ -73,15 +74,15 @@ namespace DietManager
 
             }
 
-            Back.ImageSource = ImageSource.FromResource("DietManager.smb.png");
-            Home.ImageSource = ImageSource.FromResource("DietManager.home.png");
-            MilkButton.ImageSource = ImageSource.FromResource("DietManager.smilk.png");
-            MeatButton.ImageSource = ImageSource.FromResource("DietManager.meat.png");
-            FishButton.ImageSource = ImageSource.FromResource("DietManager.fish.png");
-            FruitButton.ImageSource = ImageSource.FromResource("DietManager.fruit.png");
-            VegetableButton.ImageSource = ImageSource.FromResource("DietManager.veg.png");
-            BreadButton.ImageSource = ImageSource.FromResource("DietManager.bread.png");
-            DrinkButton.ImageSource = ImageSource.FromResource("DietManager.drink.png");
+            Back.ImageSource = ImageSource.FromResource("DietManager.images.smb.png");
+            Home.ImageSource = ImageSource.FromResource("DietManager.images.home.png");
+            MilkButton.ImageSource = ImageSource.FromResource("DietManager.images.smilk.png");
+            MeatButton.ImageSource = ImageSource.FromResource("DietManager.images.meat.png");
+            FishButton.ImageSource = ImageSource.FromResource("DietManager.images.fish.png");
+            FruitButton.ImageSource = ImageSource.FromResource("DietManager.images.fruit.png");
+            VegetableButton.ImageSource = ImageSource.FromResource("DietManager.images.veg.png");
+            BreadButton.ImageSource = ImageSource.FromResource("DietManager.images.bread.png");
+            DrinkButton.ImageSource = ImageSource.FromResource("DietManager.images.drink.png");
 
         }
 
@@ -93,7 +94,7 @@ namespace DietManager
 
         protected async void HomeClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PlanPage());
+            await Navigation.PushAsync(new MainPage());
 
         }
 
