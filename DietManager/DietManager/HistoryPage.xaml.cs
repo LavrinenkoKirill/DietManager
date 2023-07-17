@@ -20,6 +20,7 @@ namespace DietManager
     {
         private string gender;
         private int calories;
+        bool flag = false;
         public HistoryPage(string gender, int calories)
         {
             this.gender = gender;
@@ -102,7 +103,7 @@ namespace DietManager
             }
 
             string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
-            if (File.Exists(localHistoryPath))
+            if (File.Exists(localHistoryPath) && flag == false)
             {
                 string parameters = File.ReadAllText(localHistoryPath);
                 Debug.WriteLine(parameters);
@@ -122,7 +123,7 @@ namespace DietManager
                     label.TextColor = Color.Black;
                     prod.Content = label;
                     InfoButton button = new InfoButton();
-                    button.WidthRequest = 50;
+                    button.WidthRequest = 40;
                     button.Margin = new Thickness(10, 0, 20, 0);
                     button.setProduct(info[0]);
                     button.setCaloriesValue(int.Parse(info[1]));
@@ -132,26 +133,29 @@ namespace DietManager
                     stack.Orientation = StackOrientation.Horizontal;
                     stack.Children.Add(prod);
                     stack.Children.Add(button);
-                    button.HeightRequest = 15;
+                    button.HeightRequest = 10;
                     button.ImageSource = ImageSource.FromResource("DietManager.images.blurcross.png");
                     button.Clicked += DeleteClick;
                     HistoryBG.Children.Add(stack);
 
                 }
             }
-
-            Button AddButton = new Button();
-            AddButton.HeightRequest = 60;
-            AddButton.BorderColor = Color.Gray;
-            AddButton.WidthRequest = 50;
-            AddButton.BorderWidth = 1;
-            AddButton.Text = "Добавить";
-            AddButton.TextColor = Color.White;
-            AddButton.Margin = new Thickness(100, 50, 100, 0);
-            AddButton.CornerRadius = 20;
-            AddButton.Clicked += AddButtonClick;
-            AddButton.Background = PaintByGender(gender);
-            HistoryBG.Children.Add(AddButton);
+            if (flag == false)
+            {
+                Button AddButton = new Button();
+                AddButton.HeightRequest = 60;
+                AddButton.BorderColor = Color.Gray;
+                AddButton.WidthRequest = 50;
+                AddButton.BorderWidth = 1;
+                AddButton.Text = "Добавить";
+                AddButton.TextColor = Color.White;
+                AddButton.Margin = new Thickness(100, 50, 100, 0);
+                AddButton.CornerRadius = 20;
+                AddButton.Clicked += AddButtonClick;
+                AddButton.Background = PaintByGender(gender);
+                HistoryBG.Children.Add(AddButton);
+            }
+            flag = true;
 
             caloriesRemainsLabel.Text = calories.ToString();
             
