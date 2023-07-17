@@ -12,11 +12,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\blurcross.png" />
     <None Remove="images\bread.png" />
     <None Remove="images\drink.png" />
+    <None Remove="images\fblur.png" />
     <None Remove="images\female1.png" />
     <None Remove="images\fish.png" />
     <None Remove="images\fruit.png" />
+    <None Remove="images\highblur.png" />
     <None Remove="images\home.png" />
     <None Remove="images\logo2.png" />
     <None Remove="images\male1.png" />
@@ -35,11 +38,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="images\blurcross.png" />
     <EmbeddedResource Include="images\bread.png" />
     <EmbeddedResource Include="images\drink.png" />
+    <EmbeddedResource Include="images\fblur.png" />
     <EmbeddedResource Include="images\female1.png" />
     <EmbeddedResource Include="images\fish.png" />
     <EmbeddedResource Include="images\fruit.png" />
+    <EmbeddedResource Include="images\highblur.png" />
     <EmbeddedResource Include="images\home.png" />
     <EmbeddedResource Include="images\logo2.png" />
     <EmbeddedResource Include="images\male1.png" />

@@ -145,28 +145,32 @@ namespace DietManager
         protected async void AddClick(object sender, EventArgs e)
         {
             InfoButton infoButton = (InfoButton)sender;
-            string result = await DisplayPromptAsync("Вес продукта", "Пожалуйста, укажите вес продукта в граммах");
-            int gram = int.Parse(result);
-
-            string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
-            File.AppendAllText(localHistoryPath, infoButton.getProduct() + ' ' + gram.ToString() + '\n');
-
-            if (gram < 1 || gram > 1000000) 
+            string result = await DisplayPromptAsync("Вес продукта", "Пожалуйста, укажите вес продукта в граммах", "ОК", "Отмена", "Введите количество грамм" , -1, Keyboard.Numeric);
+            if (result != null) 
             {
-                await DisplayAlert("Некорректный вес", "Пожалуйста, укажите положительный вес продукта", "Ок");
-                return;
-            }
-            else
-            {
-                string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
-                string prevCal = File.ReadAllText(localCaloriesPath);
-                int prev = int.Parse(prevCal);
-                prev += (int)((infoButton.getCaloriesValue() / 100) * gram);
-                File.WriteAllText(localCaloriesPath, prev.ToString());
-                var answer = DisplayAlert("Отлично", "Продукт успешно добавлен", "ОК");
-                if (answer != null) { await Navigation.PushAsync(new PlanPage()); }
+                int gram = int.Parse(result);
 
+                string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
+                File.AppendAllText(localHistoryPath, infoButton.getProduct() + ' ' + gram.ToString() + ' ' + ((int)((infoButton.getCaloriesValue() / 100) * gram)).ToString() + '\n');
+
+                if (gram < 1 || gram > 1000000)
+                {
+                    await DisplayAlert("Некорректный вес", "Пожалуйста, укажите положительный вес продукта", "Ок");
+                    return;
+                }
+                else
+                {
+                    string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
+                    string prevCal = File.ReadAllText(localCaloriesPath);
+                    int prev = int.Parse(prevCal);
+                    prev += (int)((infoButton.getCaloriesValue() / 100) * gram);
+                    File.WriteAllText(localCaloriesPath, prev.ToString());
+                    var answer = DisplayAlert("Отлично", "Продукт успешно добавлен", "ОК");
+                    if (answer != null) { await Navigation.PushAsync(new PlanPage()); }
+
+                }
             }
+            
         }
 
     }

@@ -23,9 +23,9 @@
             </Frame>
 
 
-            <StackLayout Orientation ="Horizontal" Margin="0,80,0,0">
+            <StackLayout Orientation ="Horizontal" Margin="15,80,0,0" Spacing="90">
                 <Image x:Name="Male" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
-                <Image x:Name="Female" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand"/>
+                <Image x:Name="Female" HorizontalOptions ="CenterAndExpand" VerticalOptions ="CenterAndExpand" Margin="0,0,40,0"/>
             </StackLayout>
 
             
@@ -56,7 +56,7 @@
 
 
             <StackLayout Orientation ="Horizontal">
-                <Button x:Name="GenderBack" HeightRequest="53" WidthRequest="64" BorderColor="Gray" BorderWidth="1" CornerRadius="180" Margin="10,200,240,10" Clicked="GenderBackClick">
+                <Button x:Name="GenderBack" HeightRequest="53" WidthRequest="64" BorderColor="Gray" BorderWidth="1" CornerRadius="180" Margin="10,130,240,10" Clicked="GenderBackClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"
@@ -67,7 +67,7 @@
                     </Button.Background>
                 </Button>
 
-                <Button x:Name ="GenderForward" HeightRequest="53" WidthRequest="64" BorderColor="Gray" BorderWidth="1" CornerRadius="180" Margin="0,200,10,10" Clicked="GenderClick">
+                <Button x:Name ="GenderForward" HeightRequest="53" WidthRequest="64" BorderColor="Gray" BorderWidth="1" CornerRadius="180" Margin="0,130,10,10" Clicked="GenderClick">
                     <Button.Background>
                         <LinearGradientBrush>
                             <GradientStop Color = "#FF9A9E"

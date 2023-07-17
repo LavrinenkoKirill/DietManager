@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -106,21 +107,35 @@ namespace DietManager
                 string parameters = File.ReadAllText(localHistoryPath);
                 Debug.WriteLine(parameters);
                 string[] pars = parameters.Split('\n');
+                HistoryBG.Spacing = 20;
                 for (int i = 0; i < pars.Length - 1; i++)
                 {
                     string[] info = pars[i].Split(' ');
-                    Debug.WriteLine(info[0]);
                     Frame prod = new Frame();
                     prod.HeightRequest = 18;
                     prod.WidthRequest = 270;
-                    prod.Margin = new Thickness(50, 10, 50, 0);
+                    prod.Margin = new Thickness(35, 0, 0, 0);
                     prod.BackgroundColor = Color.White;
                     prod.CornerRadius = 20;
                     Label label = new Label();
-                    label.Text = info[0] + ", " + info[1] + ' ' + "грамм";
+                    label.Text = info[0] + ", " + info[1] + ' ' + "грамм, " + info[2] + " калорий";
                     label.TextColor = Color.Black;
                     prod.Content = label;
-                    HistoryBG.Children.Add(prod);
+                    InfoButton button = new InfoButton();
+                    button.WidthRequest = 50;
+                    button.Margin = new Thickness(10, 0, 20, 0);
+                    button.setProduct(info[0]);
+                    button.setCaloriesValue(int.Parse(info[1]));
+                    button.setCaloriesTotal(int.Parse(info[2]));
+                    StackLayout stack = new StackLayout();
+                    stack.Spacing = 20;
+                    stack.Orientation = StackOrientation.Horizontal;
+                    stack.Children.Add(prod);
+                    stack.Children.Add(button);
+                    button.HeightRequest = 15;
+                    button.ImageSource = ImageSource.FromResource("DietManager.images.blurcross.png");
+                    button.Clicked += DeleteClick;
+                    HistoryBG.Children.Add(stack);
 
                 }
             }
@@ -146,6 +161,27 @@ namespace DietManager
         protected async void AddButtonClick(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CategoryPage(gender,calories));
+        }
+
+        protected async void DeleteClick(object sender, EventArgs e)
+        {
+            InfoButton infoButton = (InfoButton)sender;
+            var result = await DisplayAlert("Внимание", "Вы уверены, что хотите удалить продукт из истории?", "ОК", "Отмена");
+            if (result == true)
+            {
+                string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
+                string text = File.ReadAllText(localHistoryPath);
+                string substring = infoButton.getProduct() + ' ' + infoButton.getCaloriesValue() + ' ' + infoButton.getCaloriesTotal() + '\n';
+                int i = text.IndexOf(substring);
+                string res = text.Remove(i, substring.Length);
+                File.WriteAllText(localHistoryPath, res);
+                string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
+                string prev = File.ReadAllText(localCaloriesPath);
+                int calor = int.Parse(prev);
+                File.WriteAllText(localCaloriesPath, (calor - infoButton.getCaloriesTotal()).ToString());
+                await Navigation.PushAsync(new HistoryPage(gender, calories + infoButton.getCaloriesTotal()));
+            }
+
         }
     }
 }

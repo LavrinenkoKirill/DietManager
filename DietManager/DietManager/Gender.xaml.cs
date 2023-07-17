@@ -15,8 +15,8 @@ namespace DietManager
 
         protected override void OnAppearing()
         {
-            Male.Source = ImageSource.FromResource("DietManager.images.male1.png");
-            Female.Source = ImageSource.FromResource("DietManager.images.female1.png");
+            Male.Source = ImageSource.FromResource("DietManager.images.highblur.png");
+            Female.Source = ImageSource.FromResource("DietManager.images.fblur.png");
             GenderBack.ImageSource = ImageSource.FromResource("DietManager.images.smb.png");
             GenderForward.ImageSource = ImageSource.FromResource("DietManager.images.smf.png");
         }
