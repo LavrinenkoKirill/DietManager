@@ -14,7 +14,7 @@ namespace DietManager
 
         protected override void OnAppearing()
         {
-            Logo.Source = ImageSource.FromResource("DietManager.images.logo2.png");
+            Logo.Source = ImageSource.FromResource("DietManager.images.logo.png");
         }
 
 

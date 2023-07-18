@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Diagnostics;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -26,6 +28,7 @@ namespace DietManager
             this.gender = gender;
             this.calories = calories;
             InitializeComponent();
+            
         }
 
         protected LinearGradientBrush PaintByGender(string gender)
@@ -64,6 +67,7 @@ namespace DietManager
 
         protected override void OnAppearing()
         {
+            
             if (gender == "Male")
             {
                 LinearGradientBrush br = new LinearGradientBrush();
@@ -142,24 +146,57 @@ namespace DietManager
             }
             if (flag == false)
             {
-                Button AddButton = new Button();
+                StackLayout buttonStack = new StackLayout();
+                buttonStack.Spacing = 50;
+                buttonStack.Orientation = StackOrientation.Horizontal;
+
+                Xamarin.Forms.Button AddButton = new Xamarin.Forms.Button();
                 AddButton.HeightRequest = 60;
                 AddButton.BorderColor = Color.Gray;
-                AddButton.WidthRequest = 50;
+                
                 AddButton.BorderWidth = 1;
                 AddButton.Text = "Добавить";
                 AddButton.TextColor = Color.White;
-                AddButton.Margin = new Thickness(100, 50, 100, 0);
+                AddButton.Margin = new Thickness(50, 50, 0, 0);
                 AddButton.CornerRadius = 20;
+                AddButton.WidthRequest = 120;
                 AddButton.Clicked += AddButtonClick;
                 AddButton.Background = PaintByGender(gender);
-                HistoryBG.Children.Add(AddButton);
+
+
+                Xamarin.Forms.Button clearButton = new Xamarin.Forms.Button();
+                clearButton.HeightRequest = 60;
+                clearButton.BorderColor = Color.Gray;
+                clearButton.BorderWidth = 1;
+                clearButton.Text = "Очистить  историю";
+                clearButton.TextColor = Color.White;
+                clearButton.Margin = new Thickness(0, 50, 50, 0);
+                clearButton.CornerRadius = 20;
+                clearButton.WidthRequest = 120;
+                clearButton.Clicked += ClearHistoryClick;
+                clearButton.Background = PaintByGender(gender);
+
+                buttonStack.Children.Add(AddButton);
+                buttonStack.Children.Add(clearButton);
+
+               
+                
+
+                HistoryBG.Children.Add(buttonStack);
+
+
             }
             flag = true;
 
             caloriesRemainsLabel.Text = calories.ToString();
             
 
+        }
+
+        protected override bool OnBackButtonPressed() 
+        {
+            this.OnAppearing();
+            return true;
         }
 
         protected async void AddButtonClick(object sender, EventArgs e)
@@ -174,18 +211,55 @@ namespace DietManager
             if (result == true)
             {
                 string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
-                string text = File.ReadAllText(localHistoryPath);
-                string substring = infoButton.getProduct() + ' ' + infoButton.getCaloriesValue() + ' ' + infoButton.getCaloriesTotal() + '\n';
-                int i = text.IndexOf(substring);
-                string res = text.Remove(i, substring.Length);
-                File.WriteAllText(localHistoryPath, res);
-                string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
-                string prev = File.ReadAllText(localCaloriesPath);
-                int calor = int.Parse(prev);
-                File.WriteAllText(localCaloriesPath, (calor - infoButton.getCaloriesTotal()).ToString());
-                await Navigation.PushAsync(new HistoryPage(gender, calories + infoButton.getCaloriesTotal()));
+                if (File.Exists(localHistoryPath))
+                {
+                    string text = File.ReadAllText(localHistoryPath);
+                    string substring = infoButton.getProduct() + ' ' + infoButton.getCaloriesValue() + ' ' + infoButton.getCaloriesTotal() + '\n';
+                    int i = text.IndexOf(substring);
+                    if (i != -1)
+                    {
+                        string res = text.Remove(i, substring.Length);
+                        File.WriteAllText(localHistoryPath, res);
+                        string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
+                        string prev = File.ReadAllText(localCaloriesPath);
+                        int calor = int.Parse(prev);
+                        File.WriteAllText(localCaloriesPath, (calor - infoButton.getCaloriesTotal()).ToString());
+                        await Navigation.PushAsync(new HistoryPage(gender, calories + infoButton.getCaloriesTotal()));
+                    }
+                }
             }
 
+        }
+
+        protected async void ClearHistoryClick(object sender, EventArgs e)
+        {
+            var result = await DisplayAlert("Внимание", "Вы уверены, что хотите очистить историю питания?", "ОК", "Отмена");
+            
+            if (result == true)
+            {
+                string localHistoryPath = Path.Combine(FileSystem.CacheDirectory, "History.txt");
+                string localCaloriesPath = Path.Combine(FileSystem.CacheDirectory, "Calories.txt");
+                if (File.Exists(localCaloriesPath))
+                {
+                    File.WriteAllText(localCaloriesPath,"0");
+                }
+
+                if (File.Exists(localHistoryPath)) 
+                {
+                    string parameters = File.ReadAllText(localHistoryPath);
+                    string[] pars = parameters.Split('\n');
+                    int total = 0;
+                    for (int i = 0; i < pars.Length - 1; i++)
+                    {
+                        string[] info = pars[i].Split(' ');
+                        total += int.Parse(info[2]);
+                    }
+
+                    File.Delete(localHistoryPath);
+                    await Navigation.PushAsync(new HistoryPage(gender, calories + total));
+                }
+
+            }
         }
     }
 }

@@ -21,17 +21,17 @@
                                 CornerRadius="20"
                                 IsCurvedCornersEnabled="True"    
                                 HorizontalTextAlignment="Center"
-                                FontSize="15"
+                                FontSize="18"
+                                Placeholder="Укажите ваш рост"
+                                PlaceholderColor="Gray"
                                 TextColor="Black"
                                 WidthRequest="180"
                                 HeightRequest="5"
                                 Margin="70,0,5,120"
-                                Placeholder="Укажите ваш рост"
-                                PlaceholderColor="Gray"
                                 Keyboard="Numeric"/>
                 <Frame BackgroundColor="White" HeightRequest="40" WidthRequest="30" Margin="0,0,5,120" CornerRadius="20">
                     <StackLayout>
-                        <Label Text="см" TextColor="Black" FontSize = "15" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="0,0,0,10"/>
+                        <Label Text="см" TextColor="Black" FontSize = "18" HorizontalTextAlignment= "Center" VerticalTextAlignment="Center" Padding ="0,0,0,10"/>
                     </StackLayout>
 
                 </Frame>

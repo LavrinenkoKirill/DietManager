@@ -14,32 +14,7 @@
                 </StackLayout>
             </Frame>
 
-            <!--
-            <StackLayout Orientation ="Horizontal" VerticalOptions="End">
-                <Button x:Name ="Back" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="10,270,85,20" Clicked="BackClick">
-                    <Button.Background>
-                        <LinearGradientBrush>
-                            <GradientStop Color = "#FF9A9E"
-                          Offset= "0.1" />
-                            <GradientStop Color=  "#FFB5E7"
-                          Offset= "1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-
-
-                <Button x:Name ="Home" HeightRequest="53" WidthRequest="64" CornerRadius="180" Margin="0,270,10,20" Clicked="HomeClick">
-                    <Button.Background>
-                        <LinearGradientBrush>
-                            <GradientStop Color = "#FF9A9E"
-                          Offset= "0.1" />
-                            <GradientStop Color=  "#FFB5E7"
-                          Offset= "1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-            </StackLayout>
-            -->
+          
 
 
         </StackLayout>

@@ -44,9 +44,9 @@
                 <RadioButton x:Name ="FemaleButton" Content = "Женщина" TextColor="Black" BorderColor="Gray" BorderWidth="1" FontSize = "17"  CornerRadius="20"  HeightRequest="40" WidthRequest="150" Margin="25,0,0,30" GroupName="state">
                     <RadioButton.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color = "#F68084"
+                            <GradientStop Color = "#FAB2B5"
                             Offset= "0.1" />
-                            <GradientStop Color=  "#FAB2B5"
+                            <GradientStop Color=  "#F68084" 
                              Offset= "1.0" />
                         </LinearGradientBrush>
                     </RadioButton.Background>

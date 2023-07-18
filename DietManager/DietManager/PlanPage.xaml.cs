@@ -149,6 +149,12 @@ namespace DietManager
 
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            this.OnAppearing();
+            return true;
+        }
+
         protected async void ReportClick(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ReportPage(gender, currentWeight, wishWeight, day, dailyRate));

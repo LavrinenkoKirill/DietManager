@@ -5,7 +5,7 @@
 		<color android:color="@color/colorPink"></color>
 	</item>
 	<item>
-		<bitmap android:src="@drawable/ic_launcher_foreground"
+		<bitmap android:src="@drawable/smalllogo"
 		android:tileMode="disabled"
 		android:gravity="center_vertical"
       />
