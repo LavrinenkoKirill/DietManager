@@ -176,12 +176,12 @@ namespace DietManager
 
                 catch (FormatException)
                 {
-                    await DisplayAlert("Внимание", "Вы ввели некрректное значение количества грамм", "ОК");
+                    await DisplayAlert("Внимание", "Вы ввели некорректное значение количества грамм", "ОК");
                     return;
                 }
                 catch (OverflowException)
                 {
-                    await DisplayAlert("Внимание", "Вы ввели некрректное значение количества грамм", "ОК");
+                    await DisplayAlert("Внимание", "Вы ввели некорректное значение количества грамм", "ОК");
                     return;
                 }
             }
