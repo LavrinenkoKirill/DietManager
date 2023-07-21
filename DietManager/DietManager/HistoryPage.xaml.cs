@@ -157,7 +157,7 @@ namespace DietManager
                 AddButton.BorderWidth = 1;
                 AddButton.Text = "Добавить";
                 AddButton.TextColor = Color.White;
-                AddButton.Margin = new Thickness(50, 50, 0, 0);
+                AddButton.Margin = new Thickness(0, 50, 50, 0);
                 AddButton.CornerRadius = 20;
                 AddButton.WidthRequest = 120;
                 AddButton.Clicked += AddButtonClick;
@@ -170,26 +170,59 @@ namespace DietManager
                 clearButton.BorderWidth = 1;
                 clearButton.Text = "Очистить  историю";
                 clearButton.TextColor = Color.White;
-                clearButton.Margin = new Thickness(0, 50, 50, 0);
+                clearButton.Margin = new Thickness(50, 50, 0, 0);
                 clearButton.CornerRadius = 20;
                 clearButton.WidthRequest = 120;
                 clearButton.Clicked += ClearHistoryClick;
                 clearButton.Background = PaintByGender(gender);
 
-                buttonStack.Children.Add(AddButton);
                 buttonStack.Children.Add(clearButton);
+                buttonStack.Children.Add(AddButton);
 
                
                 
 
                 HistoryBG.Children.Add(buttonStack);
 
+                Grid fbuttonStack = new Grid();
+                Xamarin.Forms.Button back = new Xamarin.Forms.Button();
+                back.HeightRequest = 53;
+                back.WidthRequest = 64;
+                back.BorderColor = Color.Gray;
+                back.BorderWidth = 1;
+                back.CornerRadius = 180;
+                fbuttonStack.VerticalOptions =LayoutOptions.EndAndExpand;
+                
+                back.Background = PaintByGender(gender);
+
+                Xamarin.Forms.Button home = new Xamarin.Forms.Button();
+                home.HeightRequest = 53;
+                home.WidthRequest = 64;
+                home.BorderColor = Color.Gray;
+                home.BorderWidth = 1;
+                home.CornerRadius = 180;
+                home.Background = PaintByGender(gender);
+
+                fbuttonStack.HorizontalOptions = LayoutOptions.Start;
+                fbuttonStack.Children.Add(back);
+                fbuttonStack.HorizontalOptions = LayoutOptions.Center;
+                fbuttonStack.Children.Add(home);
+                back.Margin = new Thickness(10, 0,320, 20);
+                home.Margin = new Thickness(160, 0, 170, 20);
+
+                HistoryBG.Children.Add(fbuttonStack);
+
+                back.ImageSource = ImageSource.FromResource("DietManager.images.smb.png");
+                home.ImageSource = ImageSource.FromResource("DietManager.images.home.png");
+
+                back.Clicked += BackClick;
+                home.Clicked += HomeClick;
+
 
             }
             flag = true;
 
             caloriesRemainsLabel.Text = calories.ToString();
-            
 
         }
 
@@ -202,6 +235,15 @@ namespace DietManager
         protected async void AddButtonClick(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CategoryPage(gender,calories));
+        }
+
+        protected async void BackClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PlanPage());
+        }
+        protected async void HomeClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
         }
 
         protected async void DeleteClick(object sender, EventArgs e)

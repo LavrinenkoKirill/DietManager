@@ -59,6 +59,40 @@ namespace DietManager
             }
         }
 
+        protected LinearGradientBrush PaintByGender(string gender)
+        {
+            if (gender == "Male")
+            {
+                LinearGradientBrush ButtonBrush = new LinearGradientBrush();
+                ButtonBrush.StartPoint = new Point(1, 0);
+                ButtonBrush.EndPoint = new Point(0, 1);
+                GradientStop FirstButtonColor = new GradientStop();
+                GradientStop SecondButtonColor = new GradientStop();
+                FirstButtonColor.Color = Color.FromHex("AB74EBD5");
+                SecondButtonColor.Color = Color.FromHex("AB9FACE6");
+                FirstButtonColor.Offset = (float)0.1;
+                SecondButtonColor.Offset = (float)1.0;
+                ButtonBrush.GradientStops.Add(FirstButtonColor);
+                ButtonBrush.GradientStops.Add(SecondButtonColor);
+                return ButtonBrush;
+            }
+            else
+            {
+                LinearGradientBrush ButtonBrush = new LinearGradientBrush();
+                ButtonBrush.StartPoint = new Point(1, 0);
+                ButtonBrush.EndPoint = new Point(0, 1);
+                GradientStop FirstButtonColor = new GradientStop();
+                GradientStop SecondButtonColor = new GradientStop();
+                FirstButtonColor.Color = Color.FromHex("FF9A9E");
+                SecondButtonColor.Color = Color.FromHex("#FFB5E7");
+                FirstButtonColor.Offset = (float)0.1;
+                SecondButtonColor.Offset = (float)1.0;
+                ButtonBrush.GradientStops.Add(FirstButtonColor);
+                ButtonBrush.GradientStops.Add(SecondButtonColor);
+                return ButtonBrush;
+            }
+        }
+
         protected override void OnAppearing()
         {
             if (gender == "Male")
@@ -75,20 +109,6 @@ namespace DietManager
                 br.GradientStops.Add(FirstColor);
                 br.GradientStops.Add(SecondColor);
                 ChooseProductBG.Background = br;
-
-                LinearGradientBrush ButtonBrush = new LinearGradientBrush();
-                ButtonBrush.StartPoint = new Point(1, 0);
-                ButtonBrush.EndPoint = new Point(0, 1);
-                GradientStop FirstButtonColor = new GradientStop();
-                GradientStop SecondButtonColor = new GradientStop();
-                FirstButtonColor.Color = Color.FromHex("AB74EBD5");
-                SecondButtonColor.Color = Color.FromHex("AB9FACE6");
-                FirstButtonColor.Offset = (float)0.1;
-                SecondButtonColor.Offset = (float)1.0;
-                ButtonBrush.GradientStops.Add(FirstButtonColor);
-                ButtonBrush.GradientStops.Add(SecondButtonColor);
-                // Back.Background = ButtonBrush;
-                // Home.Background = ButtonBrush;
 
                 Frame1.BackgroundColor = Color.FromHex("3f63998f");
 
@@ -112,8 +132,6 @@ namespace DietManager
 
             }
 
-           // Back.ImageSource = ImageSource.FromResource("DietManager.smb.png");
-           // Home.ImageSource = ImageSource.FromResource("DietManager.home.png");
             CategoryNameLabel.Text = category;
 
             string localPath;
@@ -127,7 +145,75 @@ namespace DietManager
             else localPath = Path.Combine(FileSystem.CacheDirectory, "DrinkProducts.txt");
 
             GetProducts(localPath);
-      
+
+
+
+            //StackLayout buttonStack = new StackLayout();
+            // buttonStack.Orientation = StackOrientation.Horizontal;
+            // Button back = new Button();
+            // back.HeightRequest = 53;
+            // back.WidthRequest = 64;
+            // back.BorderColor = Color.Gray;
+            //back.BorderWidth = 1;
+            //back.CornerRadius = 180;
+            //back.Margin = new Thickness(10, 370, 85, 20);
+            // back.Background = PaintByGender(gender);
+
+            // Button home = new Button();
+            // home.HeightRequest = 53;
+            // home.WidthRequest = 64;
+            // home.BorderColor = Color.Gray;
+            // home.BorderWidth = 1;
+            // home.CornerRadius = 180;
+            // home.Margin = new Thickness(00, 370, 15, 20);
+            // home.Background = PaintByGender(gender);
+
+            // back.Clicked += BackClick;
+            // home.Clicked += HomeClick;
+
+            // buttonStack.Children.Add(back);
+            // buttonStack.Children.Add(home);
+            //ChooseProductBG.Children.Add(buttonStack);
+
+            // back.ImageSource = ImageSource.FromResource("DietManager.images.smb.png");
+            // home.ImageSource = ImageSource.FromResource("DietManager.images.home.png");
+
+            Grid fbuttonStack = new Grid();
+            Xamarin.Forms.Button back = new Xamarin.Forms.Button();
+            back.HeightRequest = 53;
+            back.WidthRequest = 64;
+            back.BorderColor = Color.Gray;
+            back.BorderWidth = 1;
+            back.CornerRadius = 180;
+            fbuttonStack.VerticalOptions = LayoutOptions.EndAndExpand;
+
+            back.Background = PaintByGender(gender);
+
+            Xamarin.Forms.Button home = new Xamarin.Forms.Button();
+            home.HeightRequest = 53;
+            home.WidthRequest = 64;
+            home.BorderColor = Color.Gray;
+            home.BorderWidth = 1;
+            home.CornerRadius = 180;
+            home.Background = PaintByGender(gender);
+
+            fbuttonStack.HorizontalOptions = LayoutOptions.Start;
+            fbuttonStack.Children.Add(back);
+            fbuttonStack.HorizontalOptions = LayoutOptions.Center;
+            fbuttonStack.Children.Add(home);
+            back.Margin = new Thickness(10, 0, 320, 20);
+            home.Margin = new Thickness(160, 0, 170, 20);
+
+            ChooseProductBG.Children.Add(fbuttonStack);
+
+            back.ImageSource = ImageSource.FromResource("DietManager.images.smb.png");
+            home.ImageSource = ImageSource.FromResource("DietManager.images.home.png");
+
+            back.Clicked += BackClick;
+            home.Clicked += HomeClick;
+
+
+
         }
 
         protected async void BackClick(object sender, EventArgs e)

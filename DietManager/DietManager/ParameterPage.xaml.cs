@@ -96,7 +96,7 @@ namespace DietManager
 
             else if (string.IsNullOrEmpty(TermEntry.Text))
             {
-                await DisplayAlert("Значение длительности программы", "Пожалуйста, укажите значение от 2 недель", "ОК");
+                await DisplayAlert("Значение вашего возраста", "Пожалуйста, укажите значение от 10 до 100 лет", "ОК");
                 return;
             }
 
@@ -122,7 +122,7 @@ namespace DietManager
                         int age = int.Parse(TermEntry.Text);
                         if (age < 10 || age > 100)
                         {
-                            await DisplayAlert("Значение желаемого веса", "Пожалуйста, укажите значение от 10 до 100 лет", "ОК");
+                            await DisplayAlert("Значение вашего возраста", "Пожалуйста, укажите значение от 10 до 100 лет", "ОК");
                             return;
                         }
 
